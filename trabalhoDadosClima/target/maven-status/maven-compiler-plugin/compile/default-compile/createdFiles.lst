@@ -1,0 +1,7 @@
+com/ufes/trabalhodadosclima/presenter/MaximasMinimasObserver.class
+com/ufes/trabalhodadosclima/presenter/EstacaoClimaticaObservavel.class
+com/ufes/trabalhodadosclima/presenter/EstatisticaClimaObserver.class
+com/ufes/trabalhodadosclima/model/DadoClima.class
+com/ufes/trabalhodadosclima/presenter/Painel.class
+com/ufes/trabalhodadosclima/TrabalhoDadosClima.class
+com/ufes/trabalhodadosclima/presenter/PainelClimaObserver.class
