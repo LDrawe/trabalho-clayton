@@ -2,10 +2,10 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class EstacaoClimatica {
-    private ArrayList<Painel> paineis;
+    private ArrayList<Painel> paineis = new ArrayList<Painel>();
 
     public void registarPainel(Painel painel) {
-        paineis.add(painel);
+        this.paineis.add(painel);
     }
 
     public void removerPainel(Painel painel) {
