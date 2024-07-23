@@ -39,8 +39,4 @@ public class DadoClima {
     public LocalDate getData() {
         return data;
     }
-   
-   
-
-    
 }
