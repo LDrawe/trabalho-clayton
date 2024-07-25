@@ -4,12 +4,12 @@
 
 package com.ufes.trabalhodadosclima;
 
-import com.ufes.trabalhodadosclima.presenter.EstacaoClimaticaObservavel;
-import com.ufes.trabalhodadosclima.presenter.EstatisticaClimaObserver;
-import com.ufes.trabalhodadosclima.presenter.MaximasMinimasObserver;
-import com.ufes.trabalhodadosclima.presenter.Painel;
-import com.ufes.trabalhodadosclima.presenter.PainelClimaObserver;
+import com.ufes.trabalhodadosclima.observer.EstacaoClimaticaObservavel;
+import com.ufes.trabalhodadosclima.observer.EstatisticaClimaObserver;
+import com.ufes.trabalhodadosclima.observer.MaximasMinimasObserver;
+import com.ufes.trabalhodadosclima.observer.PainelClimaObserver;
 import java.time.LocalDate;
+import com.ufes.trabalhodadosclima.model.IPainel;
 
 /**
  *

@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.ufes.trabalhodadosclima.presenter;
+package com.ufes.trabalhodadosclima.observer;
 
+import com.ufes.trabalhodadosclima.model.IPainel;
 import com.ufes.trabalhodadosclima.model.DadoClima;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
  *
  * @author tallesh
  */
-public class EstatisticaClimaObserver implements Painel {
+public class EstatisticaClimaObserver implements IPainel {
     
      private List<DadoClima> dadosClima;
 

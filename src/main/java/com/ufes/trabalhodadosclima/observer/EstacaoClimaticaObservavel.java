@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.ufes.trabalhodadosclima.presenter;
+package com.ufes.trabalhodadosclima.observer;
 
+import com.ufes.trabalhodadosclima.model.IPainel;
 import com.ufes.trabalhodadosclima.model.DadoClima;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -15,17 +16,17 @@ import java.util.List;
  */
 public class EstacaoClimaticaObservavel {
     
-    private List<Painel> paineis;
+    private List<IPainel> paineis;
 
    public EstacaoClimaticaObservavel() {
        paineis = new ArrayList<>();
    }
 
-   public void registrarPainel(Painel painel) {
+   public void registrarPainel(IPainel painel) {
        paineis.add(painel);
    }
 
-   public void removerPainel(Painel painel) {
+   public void removerPainel(IPainel painel) {
        paineis.remove(painel);
    }
 
@@ -35,7 +36,7 @@ public class EstacaoClimaticaObservavel {
    }
 
    private void notificarPaineis(DadoClima dadoClima) {
-       for (Painel painel : paineis) {
+       for (IPainel painel : paineis) {
            painel.atualizar(dadoClima);
        }
    }
