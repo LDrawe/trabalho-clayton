@@ -5,7 +5,6 @@
 package com.ufes.trabalhodadosclima.model;
 
 import com.ufes.trabalhodadosclima.model.DadoClima;
-import com.ufes.trabalhodadosclima.model.DadoClima;
 
 /**
  *

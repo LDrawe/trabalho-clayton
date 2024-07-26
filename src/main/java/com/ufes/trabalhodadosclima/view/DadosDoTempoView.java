@@ -3,11 +3,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.ufes.trabalhodadosclima.view;
-
 /**
  *
  * @author tallesh
  */
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import com.ufes.trabalhodadosclima.model.DadoClima;
+
 public class DadosDoTempoView extends javax.swing.JFrame {
 
     /**
@@ -127,11 +131,17 @@ public class DadosDoTempoView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void incluirBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incluirBotaoActionPerformed
-        System.out.println(tempInput.getText());
-        System.out.println(humidityInput.getText());
-        System.out.println(pressureInput.getText());
-        System.out.println(dataInput.getText());
+        float temperatura = Float.parseFloat(tempInput.getText());
+        float umidade= Float.parseFloat(humidityInput.getText());
+        float pressao = Float.parseFloat(pressureInput.getText());
+        String dataString = dataInput.getText();
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate data = LocalDate.parse(dataString, formatter);
         
+        DadoClima dados = new DadoClima(temperatura, umidade, pressao, data);
+       
+        System.out.println(temperatura + " " + umidade + " " + pressao + " " + data);
         tempInput.setText("");
         humidityInput.setText("");
         pressureInput.setText("");
