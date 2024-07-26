@@ -4,10 +4,22 @@
  */
 package com.ufes.trabalhodadosclima.presenter;
 
+import com.ufes.trabalhodadosclima.view.DadosMediosView;
+
 /**
  *
  * @author talles.h.santos
  */
 public class DadosMediosPresenter {
+    private DadosMediosView view;
+
+    public DadosMediosPresenter() {
+        view = new DadosMediosView();
+    }
+
+    public DadosMediosView getView() {
+        return view;
+    }
+    
     
 }

@@ -4,17 +4,20 @@
  */
 package com.ufes.trabalhodadosclima.view;
 
+import javax.swing.JInternalFrame;
+
 /**
  *
  * @author tallesh
  */
-public class DadosMediosView extends javax.swing.JFrame {
+public class DadosMediosView extends JInternalFrame {
 
     /**
      * Creates new form DadosMedios
      */
     public DadosMediosView() {
         initComponents();
+        setVisible(true);
     }
 
     /**

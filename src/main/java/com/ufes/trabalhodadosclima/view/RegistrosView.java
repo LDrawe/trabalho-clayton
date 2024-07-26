@@ -4,17 +4,20 @@
  */
 package com.ufes.trabalhodadosclima.view;
 
+import javax.swing.JInternalFrame;
+
 /**
  *
  * @author tallesh
  */
-public class RegistrosView extends javax.swing.JFrame {
+public class RegistrosView extends JInternalFrame{
 
     /**
      * Creates new form RegistrosView
      */
     public RegistrosView() {
         initComponents();
+        setVisible(true);
     }
 
     /**

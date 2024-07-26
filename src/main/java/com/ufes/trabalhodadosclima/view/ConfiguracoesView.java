@@ -4,11 +4,13 @@
  */
 package com.ufes.trabalhodadosclima.view;
 
+import javax.swing.JInternalFrame;
+
 /**
  *
  * @author talles.h.santos
  */
-public class ConfiguracoesView extends javax.swing.JFrame {
+public class ConfiguracoesView extends JInternalFrame {
 
     /**
      * Creates new form ConfiguracoesView

@@ -11,14 +11,17 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import com.ufes.trabalhodadosclima.model.DadoClima;
+import javax.swing.JInternalFrame;
+import javax.swing.JPanel;
 
-public class DadosDoTempoView extends javax.swing.JFrame {
+public class DadosDoTempoView extends JInternalFrame {
 
     /**
      * Creates new form DadosDoTempoView
      */
     public DadosDoTempoView() {
         initComponents();
+        setVisible(true);
     }
 
     /**

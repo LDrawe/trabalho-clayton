@@ -4,10 +4,23 @@
  */
 package com.ufes.trabalhodadosclima.presenter;
 
+import com.ufes.trabalhodadosclima.view.ConfiguracoesView;
+
 /**
  *
  * @author talles.h.santos
  */
 public class ConfiguracoesPresenter {
+    private ConfiguracoesView view;
+
+    public ConfiguracoesPresenter() {
+       view = new ConfiguracoesView();
+    }
+
+    public ConfiguracoesView getConfiguracoesView() {
+        return view;
+    }
+    
+    
     
 }

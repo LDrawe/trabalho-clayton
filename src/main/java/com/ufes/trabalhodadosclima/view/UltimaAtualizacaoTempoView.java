@@ -4,17 +4,20 @@
  */
 package com.ufes.trabalhodadosclima.view;
 
+import javax.swing.JInternalFrame;
+
 /**
  *
  * @author tallesh
  */
-public class UltimaAtualizacaoTempoView extends javax.swing.JFrame {
+public class UltimaAtualizacaoTempoView extends JInternalFrame {
 
     /**
      * Creates new form UltimaAtualizacaoTempoView
      */
     public UltimaAtualizacaoTempoView() {
         initComponents();
+        setVisible(true);
     }
 
     /**

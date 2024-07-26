@@ -4,17 +4,24 @@
  */
 package com.ufes.trabalhodadosclima.view;
 
+import javax.swing.JDesktopPane;
+import javax.swing.JFrame;
+
 /**
  *
  * @author tallesh
  */
-public class TelaPrincipalView extends javax.swing.JFrame {
+public class TelaPrincipalView extends JFrame {
+    private final JDesktopPane desktopPane = new JDesktopPane();
 
+    public JDesktopPane getDesktopPane() {
+        return desktopPane;
+    }
     /**
      * Creates new form TelaPrincipalView
      */
     public TelaPrincipalView() {
-        initComponents();
+        //initComponents();
     }
 
     /**

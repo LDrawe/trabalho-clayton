@@ -4,17 +4,20 @@
  */
 package com.ufes.trabalhodadosclima.view;
 
+import javax.swing.JInternalFrame;
+
 /**
  *
  * @author talles.h.santos
  */
-public class MaximasMinimasView extends javax.swing.JFrame {
+public class MaximasMinimasView extends JInternalFrame {
 
     /**
      * Creates new form MaximasMinimasView
      */
     public MaximasMinimasView() {
         initComponents();
+        setVisible(true);
     }
 
     /**

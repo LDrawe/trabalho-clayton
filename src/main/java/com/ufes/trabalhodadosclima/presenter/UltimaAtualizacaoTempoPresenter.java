@@ -4,10 +4,21 @@
  */
 package com.ufes.trabalhodadosclima.presenter;
 
+import com.ufes.trabalhodadosclima.view.UltimaAtualizacaoTempoView;
+
 /**
  *
  * @author talles.h.santos
  */
 public class UltimaAtualizacaoTempoPresenter {
+    private UltimaAtualizacaoTempoView view;
+
+    public UltimaAtualizacaoTempoPresenter() {
+        view = new UltimaAtualizacaoTempoView();
+    }
+
+    public UltimaAtualizacaoTempoView getView() {
+        return view;
+    }
     
 }
