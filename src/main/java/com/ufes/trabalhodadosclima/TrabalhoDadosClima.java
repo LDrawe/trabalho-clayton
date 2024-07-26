@@ -21,7 +21,7 @@ public class TrabalhoDadosClima {
     
     public static void main(String[] args) {
         
-        TelaPrincipalPresenter principal= new TelaPrincipalPresenter();
+        TelaPrincipalPresenter principal = new TelaPrincipalPresenter();
 
         //EstacaoClimaticaObservavel estacaoClimatica = new EstacaoClimaticaObservavel();
         

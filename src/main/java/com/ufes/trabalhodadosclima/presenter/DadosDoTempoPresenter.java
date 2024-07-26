@@ -12,7 +12,7 @@ import com.ufes.trabalhodadosclima.view.DadosDoTempoView;
  */
 public class DadosDoTempoPresenter {
 
-    private DadosDoTempoView view;
+    private final  DadosDoTempoView view;
     
     public DadosDoTempoPresenter() {
         view = new DadosDoTempoView();
