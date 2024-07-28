@@ -20,5 +20,4 @@ public class RegistrosPresenter {
     public RegistrosView getView() {
         return view;
     }
-
 }

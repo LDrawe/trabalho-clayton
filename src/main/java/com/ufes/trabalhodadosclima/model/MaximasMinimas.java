@@ -4,6 +4,13 @@
  */
 package com.ufes.trabalhodadosclima.model;
 
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.CategoryDataset;
+import org.jfree.data.category.DefaultCategoryDataset;
+
 /**
  *
  * @author talles.h.santos
@@ -49,5 +56,4 @@ public class MaximasMinimas {
         this.minimaUmidade = minimaUmidade;
         this.maximaUmidade = maximaUmidade;
     }
-
 }

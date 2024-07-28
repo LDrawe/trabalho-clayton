@@ -33,23 +33,6 @@ public class TelaPrincipalPresenter {
         configurarTela();
     }
 
-    private void cascadeInternalFrames() {
-        JInternalFrame[] frames = desktopPane.getAllFrames();
-        int x = 0;
-        int y = 0;
-        int frameDistance = 30; // Distance between cascaded frames
-
-        for (JInternalFrame frame : frames) {
-            if (x + frame.getWidth() > desktopPane.getWidth() || y + frame.getHeight() > desktopPane.getHeight()) {
-                x = 0;
-                y = 0;
-            }
-            frame.setLocation(x, y);
-            x += frameDistance;
-            y += frameDistance;
-        }
-    }
-
     private void configurarTela() {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -80,9 +63,9 @@ public class TelaPrincipalPresenter {
             DadosMediosView dadosMediosView = dadosMediosPresenter.getView();
             
             final ArrayList<JInternalFrame> janelas = new ArrayList<>();
-            Collections.addAll(janelas, maximasMinimasView, registrosView, ultimaAtualizacaoView, dadosTempoView, dadosMediosView);
+            Collections.addAll(janelas, maximasMinimasView, registrosView, ultimaAtualizacaoView, dadosMediosView, dadosTempoView);
             
-            desktopPane.setLayout(new GridLayout(2, 3, 20, 20)); // 1 row, all frames in columns
+            desktopPane.setLayout(new GridLayout(2, 3, 15, 10)); // 1 row, all frames in columns
 
             int x = 0; // variable to keep track of horizontal position
             for (int i = 0; i < janelas.size(); i++) {
@@ -95,7 +78,6 @@ public class TelaPrincipalPresenter {
                 janela.setLocation(x, 0); // Set initial position on x-axis (0 for vertical alignment)
                 x += janela.getWidth() + 10; // Increase x by frame width and a gap of 10 pixels
             }
-            
             view.add(desktopPane, BorderLayout.CENTER);
             view.setMinimumSize(new Dimension(800, 600)); // Adjust minimum size as needed
             view.pack();

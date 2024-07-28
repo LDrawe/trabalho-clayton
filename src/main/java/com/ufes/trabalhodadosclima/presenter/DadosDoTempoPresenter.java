@@ -18,13 +18,10 @@ public class DadosDoTempoPresenter {
         view = new DadosDoTempoView();
     }
     
-
     public DadosDoTempoView getView() {
         if (view == null) {
             System.err.println("dadosTempoView não foi inicializado.");
         }
         return view;
     }
-
-    
 }
