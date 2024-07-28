@@ -14,36 +14,35 @@ import java.util.List;
  * @author tallesh
  */
 public class EstatisticaClimaObserver implements IPainel {
-    
-     private List<DadoClima> dadosClima;
 
-   public EstatisticaClimaObserver() {
-       dadosClima = new ArrayList<>();
-   }
+    private List<DadoClima> dadosClima;
 
-   @Override
-   public void atualizar(DadoClima dadoClima) {
-       dadosClima.add(dadoClima);
-       exibirMedia();
-   }
+    public EstatisticaClimaObserver() {
+        dadosClima = new ArrayList<>();
+    }
 
-   private void exibirMedia() {
-       float somaTemperaturas = 0;
-       float somaUmidades = 0;
-       float somaPressoes = 0;
+    @Override
+    public void atualizar(DadoClima dadoClima) {
+        dadosClima.add(dadoClima);
+        exibirMedia();
+    }
 
-       for (DadoClima dadoClima : dadosClima) {
-           somaTemperaturas += dadoClima.getTemperatura();
-           somaUmidades += dadoClima.getUmidade();
-           somaPressoes += dadoClima.getPressao();
-       }
+    private void exibirMedia() {
+        float somaTemperaturas = 0;
+        float somaUmidades = 0;
+        float somaPressoes = 0;
 
-       int tamanho = dadosClima.size();
+        for (DadoClima dadoClima : dadosClima) {
+            somaTemperaturas += dadoClima.getTemperatura();
+            somaUmidades += dadoClima.getUmidade();
+            somaPressoes += dadoClima.getPressao();
+        }
 
-        System.out.println("Estatísticas Clima - Média Temperatura: " + (somaTemperaturas / tamanho) 
-        + ", Média Umidade: " + (somaUmidades / tamanho) 
-        + ", Média Pressão: " + (somaPressoes / tamanho));
-   }
+        int tamanho = dadosClima.size();
 
-    
+        System.out.println("Estatísticas Clima - Média Temperatura: " + (somaTemperaturas / tamanho)
+                + ", Média Umidade: " + (somaUmidades / tamanho)
+                + ", Média Pressão: " + (somaPressoes / tamanho));
+    }
+
 }

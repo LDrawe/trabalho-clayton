@@ -7,7 +7,6 @@ package com.ufes.trabalhodadosclima.presenter;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.chart.plot.PlotOrientation;
@@ -19,7 +18,6 @@ import com.ufes.trabalhodadosclima.view.MaximasMinimasView;
  */
 public class MaximasMinimasPresenter {
     private MaximasMinimasView view;
-    private JFreeChart chart;
     private DefaultCategoryDataset dataset = new DefaultCategoryDataset();
     
     public CategoryDataset getDataset() {

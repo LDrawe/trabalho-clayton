@@ -6,6 +6,8 @@ package com.ufes.trabalhodadosclima.view;
 
 import javax.swing.JInternalFrame;
 
+import com.ufes.trabalhodadosclima.model.DadoClima;
+
 /**
  *
  * @author talles.h.santos
@@ -15,6 +17,13 @@ public class MaximasMinimasView extends JInternalFrame {
     /**
      * Creates new form MaximasMinimasView
      */
+
+    private DadoClima dados;
+
+    public void DadosClimaticosView(DadoClima dados) {
+        this.dados = dados;
+    }
+
     public MaximasMinimasView() {
         initComponents();
         setVisible(true);

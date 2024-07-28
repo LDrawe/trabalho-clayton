@@ -7,12 +7,12 @@ package com.ufes.trabalhodadosclima.view;
  *
  * @author tallesh
  */
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
-import com.ufes.trabalhodadosclima.model.DadoClima;
+
+import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
 import javax.swing.JInternalFrame;
-import javax.swing.JPanel;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 public class DadosDoTempoView extends JInternalFrame {
 
@@ -47,30 +47,14 @@ public class DadosDoTempoView extends JInternalFrame {
 
         dataLabel.setText("Data");
 
-        dataInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dataInputActionPerformed(evt);
-            }
-        });
 
         tempLabel.setText("Temperatura");
-
-        tempInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tempInputActionPerformed(evt);
-            }
-        });
 
         humidityLabel.setText("Umidade");
 
         pressureLabel.setText("Pressao");
 
-        incluirBotao.setLabel("Incluir");
-        incluirBotao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                incluirBotaoActionPerformed(evt);
-            }
-        });
+        incluirBotao.setText("Incluir");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -132,33 +116,6 @@ public class DadosDoTempoView extends JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void incluirBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incluirBotaoActionPerformed
-        float temperatura = Float.parseFloat(tempInput.getText());
-        float umidade= Float.parseFloat(humidityInput.getText());
-        float pressao = Float.parseFloat(pressureInput.getText());
-        String dataString = dataInput.getText();
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate data = LocalDate.parse(dataString, formatter);
-        
-        DadoClima dados = new DadoClima(temperatura, umidade, pressao, data);
-       
-        System.out.println(temperatura + " " + umidade + " " + pressao + " " + data);
-        tempInput.setText("");
-        humidityInput.setText("");
-        pressureInput.setText("");
-        dataInput.setText("");
-    }//GEN-LAST:event_incluirBotaoActionPerformed
-
-    private void tempInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tempInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tempInputActionPerformed
-
-    private void dataInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dataInputActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -193,16 +150,36 @@ public class DadosDoTempoView extends JInternalFrame {
             }
         });
     }
+    
+    public JButton getBotao() {
+        return incluirBotao;
+    }
 
+    public JTextField getData() {
+        return dataInput;
+    }
+
+    public JTextField getTemp() {
+        return tempInput;
+    }
+
+    public JTextField getPressure() {
+        return pressureInput;
+    }
+
+    public JTextField getHumidity() {
+        return humidityInput;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JFormattedTextField dataInput;
-    private javax.swing.JLabel dataLabel;
-    private javax.swing.JTextField humidityInput;
-    private javax.swing.JLabel humidityLabel;
-    private javax.swing.JButton incluirBotao;
-    private javax.swing.JTextField pressureInput;
-    private javax.swing.JLabel pressureLabel;
-    private javax.swing.JTextField tempInput;
-    private javax.swing.JLabel tempLabel;
+    private JFormattedTextField dataInput;
+    private JLabel dataLabel;
+    private JTextField humidityInput;
+    private JLabel humidityLabel;
+    private JButton incluirBotao;
+    private JTextField pressureInput;
+    private JLabel pressureLabel;
+    private JTextField tempInput;
+    private JLabel tempLabel;
     // End of variables declaration//GEN-END:variables
 }
