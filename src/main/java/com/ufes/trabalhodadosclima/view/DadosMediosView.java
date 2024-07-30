@@ -5,6 +5,7 @@
 package com.ufes.trabalhodadosclima.view;
 
 import javax.swing.JInternalFrame;
+import javax.swing.JLabel;
 
 /**
  *
@@ -18,6 +19,19 @@ public class DadosMediosView extends JInternalFrame {
     public DadosMediosView() {
         initComponents();
         setVisible(true);
+        setTitle("Dados médios");
+    }
+
+    public JLabel getTempLabel() {
+        return tempLabel;
+    }
+    
+    public JLabel getPressureLabel() {
+        return pressureLabel;
+    }
+
+    public JLabel getHumidityLabel() {
+        return humidityLabel;
     }
 
     /**
@@ -29,40 +43,32 @@ public class DadosMediosView extends JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel4 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        pressureTitle = new javax.swing.JLabel();
+        tempTitle = new javax.swing.JLabel();
+        humidityTitle = new javax.swing.JLabel();
+        tempLabel = new javax.swing.JLabel();
+        humidityLabel = new javax.swing.JLabel();
+        pressureLabel = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel4.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
-        jLabel4.setText("Pressão");
+        pressureTitle.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
+        pressureTitle.setText("Pressão");
 
-        jLabel2.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
-        jLabel2.setText("Temperatura");
+        tempTitle.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
+        tempTitle.setText("Temperatura");
 
-        jLabel3.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
-        jLabel3.setText("Umidade");
+        humidityTitle.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
+        humidityTitle.setText("Umidade");
 
-        jLabel1.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
-        jLabel1.setText("Numero de registros");
+        tempLabel.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        tempLabel.setText("0");
 
-        jLabel5.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
-        jLabel5.setText("Temperatura");
+        humidityLabel.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        humidityLabel.setText("0");
 
-        jLabel6.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
-        jLabel6.setText("Umidade");
-
-        jLabel7.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
-        jLabel7.setText("Pressão");
-
-        jLabel8.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
-        jLabel8.setText("Numero de registros");
+        pressureLabel.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        pressureLabel.setText("0");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -71,38 +77,32 @@ public class DadosMediosView extends JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel2))
-                .addGap(23, 23, 23)
+                    .addComponent(humidityTitle)
+                    .addComponent(pressureTitle)
+                    .addComponent(tempTitle))
+                .addGap(90, 90, 90)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel5))
-                .addGap(18, 18, 18))
+                    .addComponent(humidityLabel)
+                    .addComponent(pressureLabel)
+                    .addComponent(tempLabel))
+                .addGap(86, 86, 86))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(70, 70, 70)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
+                    .addComponent(tempTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tempLabel))
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
+                    .addComponent(humidityTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(humidityLabel))
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel8))
-                .addContainerGap(92, Short.MAX_VALUE))
+                    .addComponent(pressureTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pressureLabel))
+                .addContainerGap(136, Short.MAX_VALUE))
         );
 
         pack();
@@ -135,23 +135,14 @@ public class DadosMediosView extends JInternalFrame {
         }
         //</editor-fold>
         //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new DadosMediosView().setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel tempTitle;
+    private javax.swing.JLabel humidityTitle;
+    private javax.swing.JLabel pressureTitle;
+    private javax.swing.JLabel tempLabel;
+    private javax.swing.JLabel humidityLabel;
+    private javax.swing.JLabel pressureLabel;
     // End of variables declaration//GEN-END:variables
 }

@@ -15,6 +15,7 @@ import javax.swing.JInternalFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
+import com.ufes.trabalhodadosclima.observer.EstacaoClimaticaObservavel;
 import com.ufes.trabalhodadosclima.view.DadosDoTempoView;
 import com.ufes.trabalhodadosclima.view.DadosMediosView;
 import com.ufes.trabalhodadosclima.view.MaximasMinimasView;
@@ -39,50 +40,46 @@ public class TelaPrincipalPresenter {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
         view = new TelaPrincipalView();
+
+        EstacaoClimaticaObservavel estacaoClimatica = new EstacaoClimaticaObservavel();
         
-        MaximasMinimasPresenter maximasMinimasPresenter = new MaximasMinimasPresenter();
-        RegistrosPresenter registrosPresenter = new RegistrosPresenter();
-        UltimaAtualizacaoTempoPresenter ultimaAtualizacaoTempoPresenter = new UltimaAtualizacaoTempoPresenter();
-        DadosDoTempoPresenter dadosDoTempoPresenter = new DadosDoTempoPresenter();
-        DadosMediosPresenter dadosMediosPresenter = new DadosMediosPresenter();
+        MaximasMinimasView maximasMinimasView = new MaximasMinimasView();
+        RegistrosView registrosView = new RegistrosView();
+        UltimaAtualizacaoTempoView ultimaAtualizacaoView = new UltimaAtualizacaoTempoView();
+        DadosDoTempoView dadosTempoView = new DadosDoTempoView();
+        DadosMediosView dadosMediosView = new DadosMediosView();
+
+        DadosDoTempoPresenter dadosDoTempoPresenter = new DadosDoTempoPresenter(dadosTempoView, estacaoClimatica);
         
+        MaximasMinimasPresenter maximasMinimasPresenter = new MaximasMinimasPresenter(maximasMinimasView, estacaoClimatica);
+        RegistrosPresenter registrosPresenter = new RegistrosPresenter(registrosView, estacaoClimatica);
+        UltimaAtualizacaoTempoPresenter ultimaAtualizacaoTempoPresenter = new UltimaAtualizacaoTempoPresenter(ultimaAtualizacaoView, estacaoClimatica);
+        DadosMediosPresenter dadosMediosPresenter = new DadosMediosPresenter(dadosMediosView, estacaoClimatica);
+        
+
         SwingUtilities.invokeLater(() -> {
             desktopPane = view.getDesktopPane();
-            
+
             if (desktopPane == null) {
                 System.err.println("JDesktopPane é null.");
                 return;
             }
-            
-            MaximasMinimasView maximasMinimasView = maximasMinimasPresenter.getView();
-            RegistrosView registrosView = registrosPresenter.getView();
-            UltimaAtualizacaoTempoView ultimaAtualizacaoView = ultimaAtualizacaoTempoPresenter.getView();
-            DadosDoTempoView dadosTempoView = dadosDoTempoPresenter.getView();
-            DadosMediosView dadosMediosView = dadosMediosPresenter.getView();
-            
-            final ArrayList<JInternalFrame> janelas = new ArrayList<>();
-            Collections.addAll(janelas, maximasMinimasView, registrosView, ultimaAtualizacaoView, dadosMediosView, dadosTempoView);
-            
-            desktopPane.setLayout(new GridLayout(2, 3, 15, 10)); // 1 row, all frames in columns
 
-            int x = 0; // variable to keep track of horizontal position
+            final ArrayList<JInternalFrame> janelas = new ArrayList<>();
+            Collections.addAll(janelas, maximasMinimasView, registrosView, ultimaAtualizacaoView, dadosMediosView,
+                dadosTempoView);
+
+            desktopPane.setLayout(new GridLayout(2, 3, 20, 20));
+
             for (int i = 0; i < janelas.size(); i++) {
                 JInternalFrame janela = janelas.get(i);
                 desktopPane.add(janela);
-                janela.setVisible(true);
-                // janela.setSize(400, 150);
-                janela.setLayer(i); // Assign different layers to each frame
-
-                janela.setLocation(x, 0); // Set initial position on x-axis (0 for vertical alignment)
-                x += janela.getWidth() + 10; // Increase x by frame width and a gap of 10 pixels
+                janela.setLayer(i);
             }
             view.add(desktopPane, BorderLayout.CENTER);
-            view.setMinimumSize(new Dimension(800, 600)); // Adjust minimum size as needed
-            view.pack();
-            view.setVisible(true);
-            view.setExtendedState(TelaPrincipalView.MAXIMIZED_BOTH);
+            view.setMinimumSize(new Dimension(1024, 600));
         });
     }
 }

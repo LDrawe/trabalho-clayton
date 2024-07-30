@@ -8,8 +8,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 
 import com.ufes.trabalhodadosclima.model.DadoClima;
+import com.ufes.trabalhodadosclima.observer.EstacaoClimaticaObservavel;
+import com.ufes.trabalhodadosclima.model.DadosCollection;
+
 import com.ufes.trabalhodadosclima.view.DadosDoTempoView;
 
 /**
@@ -18,37 +22,44 @@ import com.ufes.trabalhodadosclima.view.DadosDoTempoView;
  */
 public class DadosDoTempoPresenter {
 
-    private final DadosDoTempoView view;
+    private DadosDoTempoView view;
+    private EstacaoClimaticaObservavel observavel;
 
-    public DadosDoTempoPresenter() {
-        view = new DadosDoTempoView();
-        configurarTela();
-    }
-
-    private void handleButtonClick() {
-        float temperatura = Float.parseFloat(view.getTemp().getText());
-        float umidade= Float.parseFloat(view.getHumidity().getText());
-        float pressao = Float.parseFloat(view.getPressure().getText());
-        String dataString = view.getData().getText();
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate data = LocalDate.parse(dataString, formatter);
-        
-        DadoClima dados = new DadoClima(temperatura, umidade, pressao, data);
-        
-        System.out.println(temperatura + " " + umidade + " " + pressao + " " + data);
-        view.getTemp().setText("");
-        view.getHumidity().setText("");
-        view.getPressure().setText("");
-        view.getData().setText("");
-    }
-
-    private void configurarTela() {
-        view.getBotao().addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent evt) {
+    public DadosDoTempoPresenter(DadosDoTempoView view, EstacaoClimaticaObservavel observavel) {
+        this.view = view;
+        this.observavel = observavel;
+        view.setTitle("Dados do Tempo");
+        view.getBotao().addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 handleButtonClick();
             }
         });
+    }
+
+    private void handleButtonClick() {
+        try {
+            float temperatura = Float.parseFloat(view.getTemp().getText());
+            float umidade = Float.parseFloat(view.getHumidity().getText());
+            float pressao = Float.parseFloat(view.getPressure().getText());
+            String dataString = view.getData().getText();
+
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            LocalDate data = LocalDate.parse(dataString, formatter);
+
+            DadoClima dados = new DadoClima(temperatura, umidade, pressao, data);
+            DadosCollection.getInstance().addDado(dados);
+
+            observavel.atualizarMedicoes(dados);
+
+            view.getTemp().setText("");
+            view.getHumidity().setText("");
+            view.getPressure().setText("");
+            view.getData().setText("");
+        } catch (DateTimeParseException e) {
+            System.out.println("O formato de data inserido não é válido");
+        } catch (NumberFormatException e) {
+            System.out.println("O formato de um dos valores inserido não é válido");
+        }
     }
 
     public DadosDoTempoView getView() {

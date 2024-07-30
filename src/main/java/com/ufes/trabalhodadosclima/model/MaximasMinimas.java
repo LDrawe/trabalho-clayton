@@ -4,25 +4,18 @@
  */
 package com.ufes.trabalhodadosclima.model;
 
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.plot.PlotOrientation;
-import org.jfree.data.category.CategoryDataset;
-import org.jfree.data.category.DefaultCategoryDataset;
-
 /**
  *
  * @author talles.h.santos
  */
 public class MaximasMinimas {
 
-    private final Float minimaTemperatura;
-    private final Float maximaTemperatura;
-    private final Float minimaPressao;
-    private final Float maximaPressao;
-    private final Float minimaUmidade;
-    private final Float maximaUmidade;
+    private float maximaTemperatura = Float.MIN_VALUE;
+    private float minimaTemperatura = Float.MAX_VALUE;
+    private float maximaPressao = Float.MIN_VALUE;
+    private float minimaPressao = Float.MAX_VALUE;
+    private float maximaUmidade = Float.MIN_VALUE;
+    private float minimaUmidade = Float.MAX_VALUE;
 
     public Float getMinimaTemperatura() {
         return minimaTemperatura;
@@ -48,12 +41,27 @@ public class MaximasMinimas {
         return maximaUmidade;
     }
 
-    public MaximasMinimas(Float minimaTemperatura, Float maximaTemperatura, Float minimaPressao, Float maximaPressao, Float minimaUmidade, Float maximaUmidade) {
-        this.minimaTemperatura = minimaTemperatura;
-        this.maximaTemperatura = maximaTemperatura;
-        this.minimaPressao = minimaPressao;
-        this.maximaPressao = maximaPressao;
-        this.minimaUmidade = minimaUmidade;
-        this.maximaUmidade = maximaUmidade;
+    public void setMinimaTemperatura(Float temp) {
+        this.minimaTemperatura = temp;
+    }
+
+    public void setMaximaTemperatura(Float temp) {
+        this.maximaTemperatura = temp;
+    }
+
+    public void setMinimaPressao(Float pressure) {
+        this.minimaPressao = pressure;
+    }
+
+    public void setMaximaPressao(Float pressure) {
+        this.maximaPressao = pressure;
+    }
+
+    public void setMinimaUmidade(Float humidity) {
+        this.minimaUmidade = humidity;
+    }
+
+    public void setMaximaUmidade(Float humidity) {
+        this.maximaUmidade = humidity;
     }
 }

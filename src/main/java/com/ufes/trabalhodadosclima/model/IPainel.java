@@ -4,8 +4,6 @@
  */
 package com.ufes.trabalhodadosclima.model;
 
-import com.ufes.trabalhodadosclima.model.DadoClima;
-
 /**
  *
  * @author tallesh

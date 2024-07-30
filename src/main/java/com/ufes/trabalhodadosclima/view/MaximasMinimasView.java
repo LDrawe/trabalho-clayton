@@ -27,6 +27,7 @@ public class MaximasMinimasView extends JInternalFrame {
     public MaximasMinimasView() {
         initComponents();
         setVisible(true);
+        setTitle("Máximas e mínimas");
     }
 
     /**

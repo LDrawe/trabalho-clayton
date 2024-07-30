@@ -4,20 +4,27 @@
  */
 package com.ufes.trabalhodadosclima.presenter;
 
+import com.ufes.trabalhodadosclima.model.DadoClima;
+import com.ufes.trabalhodadosclima.model.IPainel;
+import com.ufes.trabalhodadosclima.observer.EstacaoClimaticaObservavel;
 import com.ufes.trabalhodadosclima.view.RegistrosView;
 
 /**
  *
  * @author talles.h.santos
  */
-public class RegistrosPresenter {
+public class RegistrosPresenter implements IPainel {
     private RegistrosView view;
+    private EstacaoClimaticaObservavel observavel;
 
-    public RegistrosPresenter() {
-        view = new RegistrosView();
+    public RegistrosPresenter(RegistrosView view, EstacaoClimaticaObservavel observavel) {
+        this.view = view;
+        this.observavel = observavel;
+        this.observavel.registrarPainel(this);
     }
 
-    public RegistrosView getView() {
-        return view;
+    @Override
+    public void atualizar(DadoClima dadoClima) {
+        view.getTable().addRow(new Object[]{dadoClima.getData(), dadoClima.getTemperatura(), dadoClima.getUmidade(), dadoClima.getPressao()});
     }
 }

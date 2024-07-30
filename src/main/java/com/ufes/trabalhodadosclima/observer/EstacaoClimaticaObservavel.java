@@ -4,11 +4,11 @@
  */
 package com.ufes.trabalhodadosclima.observer;
 
-import com.ufes.trabalhodadosclima.model.IPainel;
-import com.ufes.trabalhodadosclima.model.DadoClima;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.ufes.trabalhodadosclima.model.DadoClima;
+import com.ufes.trabalhodadosclima.model.IPainel;
 
 /**
  *
@@ -30,8 +30,7 @@ public class EstacaoClimaticaObservavel {
        paineis.remove(painel);
    }
 
-   public void atualizarMedicoes(float temperatura, float umidade, float pressao, LocalDate data) {
-       DadoClima dadoClima = new DadoClima(temperatura, umidade, pressao, data);
+   public void atualizarMedicoes(DadoClima dadoClima) {
        notificarPaineis(dadoClima);
    }
 
@@ -40,5 +39,4 @@ public class EstacaoClimaticaObservavel {
            painel.atualizar(dadoClima);
        }
    }
-
 }

@@ -5,6 +5,7 @@
 package com.ufes.trabalhodadosclima.view;
 
 import javax.swing.JInternalFrame;
+import javax.swing.JLabel;
 
 /**
  *
@@ -16,8 +17,30 @@ public class UltimaAtualizacaoTempoView extends JInternalFrame {
      * Creates new form UltimaAtualizacaoTempoView
      */
     public UltimaAtualizacaoTempoView() {
-        initComponents();
         setVisible(true);
+        setTitle("Último registro");
+        initComponents();
+    }
+
+    public JLabel getDataLabel() {
+        return lastDateLabel;
+    }
+
+    public JLabel getTempLabel() {
+        return lastTempLabel;
+    }
+    
+    
+    public JLabel getPressureLabel() {
+        return lastPressureLabel;
+    }
+
+    public JLabel getHumidityLabel() {
+        return lastHumidityLabel;
+    }
+
+    public JLabel getNumOfRegistersLabel() {
+        return numOfRegistersLabel;
     }
 
     /**
@@ -29,82 +52,97 @@ public class UltimaAtualizacaoTempoView extends JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel4 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        pressureTitle = new javax.swing.JLabel();
+        tempTitle = new javax.swing.JLabel();
+        humidityTitle = new javax.swing.JLabel();
+        dataTitle = new javax.swing.JLabel();
+        lastHumidityLabel = new javax.swing.JLabel();
+        lastDateLabel = new javax.swing.JLabel();
+        lastPressureLabel = new javax.swing.JLabel();
+        lastTempLabel = new javax.swing.JLabel();
+        numOfRegistersTitle = new javax.swing.JLabel();
+        numOfRegistersLabel = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel4.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
-        jLabel4.setText("Pressão");
+        pressureTitle.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
+        pressureTitle.setText("Pressão");
 
-        jLabel2.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
-        jLabel2.setText("Temperatura");
+        tempTitle.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
+        tempTitle.setText("Temperatura");
 
-        jLabel3.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
-        jLabel3.setText("Umidade");
+        humidityTitle.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
+        humidityTitle.setText("Umidade");
 
-        jLabel5.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
-        jLabel5.setText("Data");
+        dataTitle.setFont(new java.awt.Font("DejaVu Sans", 0, 18)); // NOI18N
+        dataTitle.setText("Data");
 
-        jLabel6.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
-        jLabel6.setText("Umidade");
+        lastHumidityLabel.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        lastHumidityLabel.setText("Umidade");
 
-        jLabel7.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
-        jLabel7.setText("DD/MM/AAA");
+        lastDateLabel.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        lastDateLabel.setText("DD/MM/AAA");
 
-        jLabel8.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
-        jLabel8.setText("Pressão");
+        lastPressureLabel.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        lastPressureLabel.setText("Pressão");
 
-        jLabel9.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
-        jLabel9.setText("Temperatura");
+        lastTempLabel.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
+        lastTempLabel.setText("Temperatura");
+
+        numOfRegistersTitle.setFont(new java.awt.Font("Noto Sans", 1, 14)); // NOI18N
+        numOfRegistersTitle.setText("Numero de Registros");
+
+        numOfRegistersLabel.setText("0");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(52, 52, 52)
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel2))
+                    .addComponent(dataTitle)
+                    .addComponent(humidityTitle)
+                    .addComponent(pressureTitle)
+                    .addComponent(tempTitle)
+                    .addComponent(numOfRegistersTitle))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9))
+                    .addComponent(lastHumidityLabel)
+                    .addComponent(lastPressureLabel)
+                    .addComponent(lastTempLabel)
+                    .addComponent(lastDateLabel)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(numOfRegistersLabel)))
                 .addGap(51, 51, 51))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(72, 72, 72)
+                .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lastTempLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(16, 16, 16)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lastHumidityLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(16, 16, 16)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lastPressureLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lastDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tempTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(16, 16, 16)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(humidityTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(16, 16, 16)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(pressureTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(98, Short.MAX_VALUE))
+                        .addComponent(dataTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(numOfRegistersTitle)
+                    .addComponent(numOfRegistersLabel))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         pack();
@@ -136,23 +174,18 @@ public class UltimaAtualizacaoTempoView extends JInternalFrame {
             java.util.logging.Logger.getLogger(UltimaAtualizacaoTempoView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new UltimaAtualizacaoTempoView().setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel dataTitle;
+    private javax.swing.JLabel humidityTitle;
+    private javax.swing.JLabel lastDateLabel;
+    private javax.swing.JLabel lastHumidityLabel;
+    private javax.swing.JLabel lastPressureLabel;
+    private javax.swing.JLabel lastTempLabel;
+    private javax.swing.JLabel numOfRegistersLabel;
+    private javax.swing.JLabel numOfRegistersTitle;
+    private javax.swing.JLabel pressureTitle;
+    private javax.swing.JLabel tempTitle;
     // End of variables declaration//GEN-END:variables
 }

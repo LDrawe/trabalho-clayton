@@ -8,6 +8,12 @@ package com.ufes.trabalhodadosclima.view;
  * @author tallesh
  */
 
+import javax.swing.JInternalFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
+
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 import javax.swing.JInternalFrame;
@@ -24,6 +30,26 @@ public class DadosDoTempoView extends JInternalFrame {
         setVisible(true);
     }
 
+    public JButton getBotao() {
+        return incluirBotao;
+    }
+
+    public JTextField getData() {
+        return dataInput;
+    }
+
+    public JTextField getTemp() {
+        return tempInput;
+    }
+
+    public JTextField getPressure() {
+        return pressureInput;
+    }
+
+    public JTextField getHumidity() {
+        return humidityInput;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -116,6 +142,18 @@ public class DadosDoTempoView extends JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+
+    
+
+    private void tempInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tempInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tempInputActionPerformed
+
+    private void dataInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dataInputActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -151,25 +189,6 @@ public class DadosDoTempoView extends JInternalFrame {
         });
     }
     
-    public JButton getBotao() {
-        return incluirBotao;
-    }
-
-    public JTextField getData() {
-        return dataInput;
-    }
-
-    public JTextField getTemp() {
-        return tempInput;
-    }
-
-    public JTextField getPressure() {
-        return pressureInput;
-    }
-
-    public JTextField getHumidity() {
-        return humidityInput;
-    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private JFormattedTextField dataInput;
