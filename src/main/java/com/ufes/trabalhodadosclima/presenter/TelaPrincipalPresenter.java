@@ -4,6 +4,7 @@
  */
 package com.ufes.trabalhodadosclima.presenter;
 
+import com.ufes.trabalhodadosclima.log.Log;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -29,9 +30,11 @@ import com.ufes.trabalhodadosclima.view.UltimaAtualizacaoTempoView;
 public class TelaPrincipalPresenter {
     private TelaPrincipalView view;
     private JDesktopPane desktopPane;
+    Log log;
 
     public TelaPrincipalPresenter() {
         configurarTela();
+        log = new Log();
     }
 
     private void configurarTela() {
@@ -57,7 +60,7 @@ public class TelaPrincipalPresenter {
         RegistrosPresenter registrosPresenter = new RegistrosPresenter(registrosView, estacaoClimatica);
         UltimaAtualizacaoTempoPresenter ultimaAtualizacaoTempoPresenter = new UltimaAtualizacaoTempoPresenter(ultimaAtualizacaoView, estacaoClimatica);
         DadosMediosPresenter dadosMediosPresenter = new DadosMediosPresenter(dadosMediosView, estacaoClimatica);
-        
+        ConfiguracoesPresenter configuracoesPresenter = new ConfiguracoesPresenter();
 
         SwingUtilities.invokeLater(() -> {
             desktopPane = view.getDesktopPane();

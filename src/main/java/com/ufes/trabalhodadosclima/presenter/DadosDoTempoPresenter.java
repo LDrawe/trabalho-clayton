@@ -4,6 +4,7 @@
  */
 package com.ufes.trabalhodadosclima.presenter;
 
+import com.ufes.trabalhodadosclima.log.Log;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
@@ -24,6 +25,7 @@ public class DadosDoTempoPresenter {
 
     private DadosDoTempoView view;
     private EstacaoClimaticaObservavel observavel;
+    Log log;
 
     public DadosDoTempoPresenter(DadosDoTempoView view, EstacaoClimaticaObservavel observavel) {
         this.view = view;
@@ -55,6 +57,7 @@ public class DadosDoTempoPresenter {
             view.getHumidity().setText("");
             view.getPressure().setText("");
             view.getData().setText("");
+            log.makeLog(dados, true);
         } catch (DateTimeParseException e) {
             System.out.println("O formato de data inserido não é válido");
         } catch (NumberFormatException e) {
