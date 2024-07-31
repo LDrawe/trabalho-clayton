@@ -1,23 +1,26 @@
-C:\Users\Eduardo Portilho\Downloads\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\model\DadosCollection.java
-C:\Users\Eduardo Portilho\Downloads\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\service\MaximasMinimasService.java
-C:\Users\Eduardo Portilho\Downloads\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\TrabalhoDadosClima.java
-C:\Users\Eduardo Portilho\Downloads\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\model\DadoClima.java
-C:\Users\Eduardo Portilho\Downloads\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\view\DadosDoTempoView.java
-C:\Users\Eduardo Portilho\Downloads\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\view\MaximasMinimasView.java
-C:\Users\Eduardo Portilho\Downloads\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\observer\EstacaoClimaticaObservavel.java
-C:\Users\Eduardo Portilho\Downloads\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\presenter\DadosMediosPresenter.java
-C:\Users\Eduardo Portilho\Downloads\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\presenter\TelaPrincipalPresenter.java
-C:\Users\Eduardo Portilho\Downloads\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\presenter\RegistrosPresenter.java
-C:\Users\Eduardo Portilho\Downloads\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\model\MaximasMinimas.java
-C:\Users\Eduardo Portilho\Downloads\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\view\ConfiguracoesView.java
-C:\Users\Eduardo Portilho\Downloads\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\view\ErrorView.java
-C:\Users\Eduardo Portilho\Downloads\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\view\RegistrosView.java
-C:\Users\Eduardo Portilho\Downloads\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\view\DadosMediosView.java
-C:\Users\Eduardo Portilho\Downloads\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\view\TelaPrincipalView.java
-C:\Users\Eduardo Portilho\Downloads\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\presenter\ConfiguracoesPresenter.java
-C:\Users\Eduardo Portilho\Downloads\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\view\UltimaAtualizacaoTempoView.java
-C:\Users\Eduardo Portilho\Downloads\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\presenter\DadosDoTempoPresenter.java
-C:\Users\Eduardo Portilho\Downloads\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\presenter\MaximasMinimasPresenter.java
-C:\Users\Eduardo Portilho\Downloads\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\model\IPainel.java
-C:\Users\Eduardo Portilho\Downloads\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\presenter\ErrorPresenter.java
-C:\Users\Eduardo Portilho\Downloads\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\presenter\UltimaAtualizacaoTempoPresenter.java
+/home/tallesh/repos/UFES/trabalho-clayton/src/main/java/com/ufes/trabalhodadosclima/log/json/DadoClimaJSON.java
+/home/tallesh/repos/UFES/trabalho-clayton/src/main/java/com/ufes/trabalhodadosclima/presenter/UltimaAtualizacaoTempoPresenter.java
+/home/tallesh/repos/UFES/trabalho-clayton/src/main/java/com/ufes/trabalhodadosclima/log/ILog.java
+/home/tallesh/repos/UFES/trabalho-clayton/src/main/java/com/ufes/trabalhodadosclima/observer/EstacaoClimaticaObservavel.java
+/home/tallesh/repos/UFES/trabalho-clayton/src/main/java/com/ufes/trabalhodadosclima/TrabalhoDadosClima.java
+/home/tallesh/repos/UFES/trabalho-clayton/src/main/java/com/ufes/trabalhodadosclima/presenter/TelaPrincipalPresenter.java
+/home/tallesh/repos/UFES/trabalho-clayton/src/main/java/com/ufes/trabalhodadosclima/model/MaximasMinimas.java
+/home/tallesh/repos/UFES/trabalho-clayton/src/main/java/com/ufes/trabalhodadosclima/log/json/LocalDateSerializer.java
+/home/tallesh/repos/UFES/trabalho-clayton/src/main/java/com/ufes/trabalhodadosclima/log/Log.java
+/home/tallesh/repos/UFES/trabalho-clayton/src/main/java/com/ufes/trabalhodadosclima/log/json/LogJSON.java
+/home/tallesh/repos/UFES/trabalho-clayton/src/main/java/com/ufes/trabalhodadosclima/view/RegistrosView.java
+/home/tallesh/repos/UFES/trabalho-clayton/src/main/java/com/ufes/trabalhodadosclima/model/DadoClima.java
+/home/tallesh/repos/UFES/trabalho-clayton/src/main/java/com/ufes/trabalhodadosclima/presenter/RegistrosPresenter.java
+/home/tallesh/repos/UFES/trabalho-clayton/src/main/java/com/ufes/trabalhodadosclima/model/DadosCollection.java
+/home/tallesh/repos/UFES/trabalho-clayton/src/main/java/com/ufes/trabalhodadosclima/view/DadosDoTempoView.java
+/home/tallesh/repos/UFES/trabalho-clayton/src/main/java/com/ufes/trabalhodadosclima/view/TelaPrincipalView.java
+/home/tallesh/repos/UFES/trabalho-clayton/src/main/java/com/ufes/trabalhodadosclima/service/MaximasMinimasService.java
+/home/tallesh/repos/UFES/trabalho-clayton/src/main/java/com/ufes/trabalhodadosclima/model/IPainel.java
+/home/tallesh/repos/UFES/trabalho-clayton/src/main/java/com/ufes/trabalhodadosclima/presenter/ConfiguracoesPresenter.java
+/home/tallesh/repos/UFES/trabalho-clayton/src/main/java/com/ufes/trabalhodadosclima/view/ConfiguracoesView.java
+/home/tallesh/repos/UFES/trabalho-clayton/src/main/java/com/ufes/trabalhodadosclima/view/MaximasMinimasView.java
+/home/tallesh/repos/UFES/trabalho-clayton/src/main/java/com/ufes/trabalhodadosclima/presenter/DadosMediosPresenter.java
+/home/tallesh/repos/UFES/trabalho-clayton/src/main/java/com/ufes/trabalhodadosclima/presenter/MaximasMinimasPresenter.java
+/home/tallesh/repos/UFES/trabalho-clayton/src/main/java/com/ufes/trabalhodadosclima/presenter/DadosDoTempoPresenter.java
+/home/tallesh/repos/UFES/trabalho-clayton/src/main/java/com/ufes/trabalhodadosclima/view/DadosMediosView.java
+/home/tallesh/repos/UFES/trabalho-clayton/src/main/java/com/ufes/trabalhodadosclima/view/UltimaAtualizacaoTempoView.java
