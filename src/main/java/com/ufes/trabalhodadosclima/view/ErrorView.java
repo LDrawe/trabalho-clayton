@@ -38,7 +38,6 @@ public class ErrorView extends javax.swing.JFrame {
 
         okButton = new JButton("OK");
         okButton.setHorizontalAlignment(SwingConstants.CENTER);
-        okButton.addActionListener(e -> dispose());  // Add action to close the window when OK is clicked
 
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         buttonPanel.add(okButton);
@@ -46,7 +45,7 @@ public class ErrorView extends javax.swing.JFrame {
         add(errorMessageLabel, BorderLayout.CENTER);
         add(buttonPanel, BorderLayout.SOUTH);
 
-        pack();  // This will cause the window to be sized to fit the preferred sizes and layouts of its subcomponents
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     public JButton getButton() {

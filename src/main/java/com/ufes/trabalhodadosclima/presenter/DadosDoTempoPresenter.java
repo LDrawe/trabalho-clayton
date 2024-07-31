@@ -4,8 +4,6 @@
  */
 package com.ufes.trabalhodadosclima.presenter;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -13,10 +11,7 @@ import java.time.format.DateTimeParseException;
 import com.ufes.trabalhodadosclima.model.DadoClima;
 import com.ufes.trabalhodadosclima.observer.EstacaoClimaticaObservavel;
 import com.ufes.trabalhodadosclima.model.DadosCollection;
-
 import com.ufes.trabalhodadosclima.view.DadosDoTempoView;
-import com.ufes.trabalhodadosclima.view.ErrorView;
-
 /**
  *
  * @author talles.h.santos
@@ -57,9 +52,9 @@ public class DadosDoTempoPresenter {
             view.getPressure().setText("");
             view.getData().setText("");
         } catch (DateTimeParseException e) {
-            new ErrorView("O formato de data inserido não é válido");
+            new ErrorPresenter("O formato de data inserido não é válido");
         } catch (NumberFormatException e) {
-            new ErrorView("O formato de um ou mais valores inserido(s) não é válido");
+            new ErrorPresenter("O formato de um ou mais valores inserido(s) não é válido");
         }
     }
 

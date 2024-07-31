@@ -4,10 +4,6 @@
  */
 package com.ufes.trabalhodadosclima.presenter;
 
-import java.util.ArrayList;
-
-import javax.swing.JLabel;
-
 import com.ufes.trabalhodadosclima.model.DadoClima;
 import com.ufes.trabalhodadosclima.model.DadosCollection;
 import com.ufes.trabalhodadosclima.model.IPainel;
@@ -30,9 +26,9 @@ public class DadosMediosPresenter implements IPainel {
     public DadosMediosPresenter(DadosMediosView view, EstacaoClimaticaObservavel observavel) {
         this.view = view;
         this.observavel = observavel;
-        view.setTitle("Dados Médios");
+        this.view.setTitle("Dados Médios");
 
-        observavel.registrarPainel(this);
+        this.observavel.registrarPainel(this);
         colecao = DadosCollection.getInstance();
     }
     
