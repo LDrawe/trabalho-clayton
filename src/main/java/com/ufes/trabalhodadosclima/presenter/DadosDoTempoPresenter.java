@@ -15,6 +15,7 @@ import com.ufes.trabalhodadosclima.observer.EstacaoClimaticaObservavel;
 import com.ufes.trabalhodadosclima.model.DadosCollection;
 
 import com.ufes.trabalhodadosclima.view.DadosDoTempoView;
+import com.ufes.trabalhodadosclima.view.ErrorView;
 
 /**
  *
@@ -56,9 +57,9 @@ public class DadosDoTempoPresenter {
             view.getPressure().setText("");
             view.getData().setText("");
         } catch (DateTimeParseException e) {
-            System.out.println("O formato de data inserido não é válido");
+            new ErrorView("O formato de data inserido não é válido");
         } catch (NumberFormatException e) {
-            System.out.println("O formato de um dos valores inserido não é válido");
+            new ErrorView("O formato de um ou mais valores inserido(s) não é válido");
         }
     }
 
