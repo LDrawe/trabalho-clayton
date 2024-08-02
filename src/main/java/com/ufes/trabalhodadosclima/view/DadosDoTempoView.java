@@ -65,6 +65,7 @@ public class DadosDoTempoView extends JInternalFrame {
 
         dataLabel.setText("Data");
 
+        dataInput.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
         dataInput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dataInputActionPerformed(evt);

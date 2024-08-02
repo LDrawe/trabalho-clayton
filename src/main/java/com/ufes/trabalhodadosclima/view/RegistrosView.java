@@ -4,6 +4,7 @@
  */
 package com.ufes.trabalhodadosclima.view;
 
+import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -22,6 +23,14 @@ public class RegistrosView extends JInternalFrame {
         initComponents();
         setVisible(true);
         setTitle("Registros");
+    }
+
+    public JButton getBotao() {
+        return botao;
+    }
+
+    public JTable getjTabela() {
+        return jTabela;
     }
 
     private DefaultTableModel table = new javax.swing.table.DefaultTableModel(
