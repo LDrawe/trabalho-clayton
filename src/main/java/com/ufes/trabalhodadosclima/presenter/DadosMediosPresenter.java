@@ -38,9 +38,9 @@ public class DadosMediosPresenter implements IPainel {
         somaTemperaturas += dadoClima.getTemperatura();
         somaUmidades += dadoClima.getUmidade();
         somaPressoes += dadoClima.getPressao();
-
         view.getTempLabel().setText(String.valueOf(somaTemperaturas / tamanho));
         view.getHumidityLabel().setText(String.valueOf(somaUmidades / tamanho));
         view.getPressureLabel().setText(String.valueOf(somaPressoes / tamanho));
+        view.getNumOfRegistersLabel().setText(String.valueOf(tamanho));
     }
 }

@@ -76,7 +76,7 @@ public class TelaPrincipalPresenter {
             }
 
             final ArrayList<JInternalFrame> janelas = new ArrayList<>();
-            Collections.addAll(janelas, maximasMinimasView, registrosView, ultimaAtualizacaoView, dadosMediosView,
+            Collections.addAll(janelas, maximasMinimasView, registrosView, ultimaAtualizacaoView, registrosView, dadosMediosView,
                 dadosTempoView, configuracoesView);
 
             desktopPane.setLayout(new GridLayout(2, 3, 20, 20));

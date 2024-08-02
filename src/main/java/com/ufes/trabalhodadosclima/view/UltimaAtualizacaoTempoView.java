@@ -30,17 +30,12 @@ public class UltimaAtualizacaoTempoView extends JInternalFrame {
         return lastTempLabel;
     }
     
-    
     public JLabel getPressureLabel() {
         return lastPressureLabel;
     }
 
     public JLabel getHumidityLabel() {
         return lastHumidityLabel;
-    }
-
-    public JLabel getNumOfRegistersLabel() {
-        return numOfRegistersLabel;
     }
 
     /**
@@ -60,8 +55,6 @@ public class UltimaAtualizacaoTempoView extends JInternalFrame {
         lastDateLabel = new javax.swing.JLabel();
         lastPressureLabel = new javax.swing.JLabel();
         lastTempLabel = new javax.swing.JLabel();
-        numOfRegistersTitle = new javax.swing.JLabel();
-        numOfRegistersLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -89,11 +82,6 @@ public class UltimaAtualizacaoTempoView extends JInternalFrame {
         lastTempLabel.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
         lastTempLabel.setText("Temperatura");
 
-        numOfRegistersTitle.setFont(new java.awt.Font("Noto Sans", 1, 14)); // NOI18N
-        numOfRegistersTitle.setText("Numero de Registros");
-
-        numOfRegistersLabel.setText("0");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -104,17 +92,13 @@ public class UltimaAtualizacaoTempoView extends JInternalFrame {
                     .addComponent(dataTitle)
                     .addComponent(humidityTitle)
                     .addComponent(pressureTitle)
-                    .addComponent(tempTitle)
-                    .addComponent(numOfRegistersTitle))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                    .addComponent(tempTitle))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lastHumidityLabel)
                     .addComponent(lastPressureLabel)
                     .addComponent(lastTempLabel)
-                    .addComponent(lastDateLabel)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(numOfRegistersLabel)))
+                    .addComponent(lastDateLabel))
                 .addGap(51, 51, 51))
         );
         layout.setVerticalGroup(
@@ -138,11 +122,7 @@ public class UltimaAtualizacaoTempoView extends JInternalFrame {
                         .addComponent(pressureTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(dataTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(numOfRegistersTitle)
-                    .addComponent(numOfRegistersLabel))
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         pack();
@@ -183,8 +163,6 @@ public class UltimaAtualizacaoTempoView extends JInternalFrame {
     private javax.swing.JLabel lastHumidityLabel;
     private javax.swing.JLabel lastPressureLabel;
     private javax.swing.JLabel lastTempLabel;
-    private javax.swing.JLabel numOfRegistersLabel;
-    private javax.swing.JLabel numOfRegistersTitle;
     private javax.swing.JLabel pressureTitle;
     private javax.swing.JLabel tempTitle;
     // End of variables declaration//GEN-END:variables
