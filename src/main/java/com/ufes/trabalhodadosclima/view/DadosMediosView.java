@@ -34,6 +34,10 @@ public class DadosMediosView extends JInternalFrame {
         return humidityLabel;
     }
 
+    public JLabel getNumOfRegistersLabel() {
+        return numOfRegistersLabel;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -49,6 +53,8 @@ public class DadosMediosView extends JInternalFrame {
         tempLabel = new javax.swing.JLabel();
         humidityLabel = new javax.swing.JLabel();
         pressureLabel = new javax.swing.JLabel();
+        numOfRegistersTitle = new javax.swing.JLabel();
+        numOfRegistersLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -62,35 +68,45 @@ public class DadosMediosView extends JInternalFrame {
         humidityTitle.setText("Umidade");
 
         tempLabel.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
-        tempLabel.setText("0");
+        tempLabel.setText("Temperatura");
 
         humidityLabel.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
-        humidityLabel.setText("0");
+        humidityLabel.setText("Umidade");
 
         pressureLabel.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
-        pressureLabel.setText("0");
+        pressureLabel.setText("Pressão");
+
+        numOfRegistersTitle.setFont(new java.awt.Font("Noto Sans", 1, 14)); // NOI18N
+        numOfRegistersTitle.setText("Numero de Registros");
+
+        numOfRegistersLabel.setText("0");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(50, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(humidityTitle)
-                    .addComponent(pressureTitle)
-                    .addComponent(tempTitle))
-                .addGap(90, 90, 90)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(humidityLabel)
-                    .addComponent(pressureLabel)
-                    .addComponent(tempLabel))
-                .addGap(86, 86, 86))
+                    .addComponent(numOfRegistersTitle)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(humidityTitle)
+                            .addComponent(pressureTitle)
+                            .addComponent(tempTitle))
+                        .addGap(90, 90, 90)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(humidityLabel)
+                            .addComponent(tempLabel)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(numOfRegistersLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(pressureLabel, javax.swing.GroupLayout.Alignment.LEADING)))))
+                .addGap(50, 50, 50))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(70, 70, 70)
+                .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tempTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tempLabel))
@@ -102,7 +118,11 @@ public class DadosMediosView extends JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pressureTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(pressureLabel))
-                .addContainerGap(136, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(numOfRegistersTitle)
+                    .addComponent(numOfRegistersLabel))
+                .addGap(17, 17, 17))
         );
 
         pack();
@@ -138,11 +158,13 @@ public class DadosMediosView extends JInternalFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel tempTitle;
+    private javax.swing.JLabel humidityLabel;
     private javax.swing.JLabel humidityTitle;
+    private javax.swing.JLabel numOfRegistersLabel;
+    private javax.swing.JLabel numOfRegistersTitle;
+    private javax.swing.JLabel pressureLabel;
     private javax.swing.JLabel pressureTitle;
     private javax.swing.JLabel tempLabel;
-    private javax.swing.JLabel humidityLabel;
-    private javax.swing.JLabel pressureLabel;
+    private javax.swing.JLabel tempTitle;
     // End of variables declaration//GEN-END:variables
 }

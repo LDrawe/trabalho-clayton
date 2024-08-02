@@ -29,7 +29,7 @@ public class ErrorView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setPreferredSize(new Dimension(300, 200));  // Set a more appropriate preferred size
+        setPreferredSize(new Dimension(350, 200));  // Set a more appropriate preferred size
         setLayout(new BorderLayout());
 
         errorMessageLabel = new JLabel();

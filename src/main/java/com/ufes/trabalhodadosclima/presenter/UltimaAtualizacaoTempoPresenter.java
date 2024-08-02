@@ -7,7 +7,6 @@ package com.ufes.trabalhodadosclima.presenter;
 import java.time.format.DateTimeFormatter;
 
 import com.ufes.trabalhodadosclima.model.DadoClima;
-import com.ufes.trabalhodadosclima.model.DadosCollection;
 import com.ufes.trabalhodadosclima.model.IPainel;
 import com.ufes.trabalhodadosclima.observer.EstacaoClimaticaObservavel;
 import com.ufes.trabalhodadosclima.view.UltimaAtualizacaoTempoView;
@@ -19,7 +18,6 @@ import com.ufes.trabalhodadosclima.view.UltimaAtualizacaoTempoView;
 public class UltimaAtualizacaoTempoPresenter implements IPainel{
     private UltimaAtualizacaoTempoView view;
     private EstacaoClimaticaObservavel observavel;
-    private DadosCollection colecao = DadosCollection.getInstance();
 
     DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     
@@ -31,12 +29,9 @@ public class UltimaAtualizacaoTempoPresenter implements IPainel{
 
     @Override
     public void atualizar(DadoClima dadoClima) {
-        int tamanho = colecao.getLista().size();
-
         view.getTempLabel().setText(String.valueOf(dadoClima.getTemperatura()));
         view.getHumidityLabel().setText(String.valueOf(dadoClima.getUmidade()));
         view.getPressureLabel().setText(String.valueOf(dadoClima.getPressao()));
         view.getDataLabel().setText(dadoClima.getData().format(outputFormatter));
-        view.getNumOfRegistersLabel().setText(String.valueOf(tamanho));
     }
 }
