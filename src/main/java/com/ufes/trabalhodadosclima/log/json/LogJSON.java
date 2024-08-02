@@ -6,31 +6,28 @@ package com.ufes.trabalhodadosclima.log.json;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.ufes.trabalhodadosclima.adapter.LocalDateJsonAdapter;
 import com.ufes.trabalhodadosclima.log.ILog;
 import com.ufes.trabalhodadosclima.model.DadoClima;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDate;
 
 /**
  *
  * @author tallesh
  */
-public class LogJSON implements ILog{
+public class LogJSON implements ILog {
+    private final Gson gson;
 
     public LogJSON() {
+        this.gson = new GsonBuilder()
+            .registerTypeAdapter(LocalDate.class, new LocalDateJsonAdapter())
+            .create();
     }
 
     @Override
-    public String getLogMessage(DadoClima dadoClima, boolean adicionado){
-        DadoClimaJSON dadoJson = new DadoClimaJSON(dadoClima, adicionado);
-        Gson gson = new GsonBuilder()
-                .registerTypeAdapter(LocalDate.class, new LocalDateSerializer())
-                .create();
-
-
-        String json = gson.toJson(dadoJson);
-
-        return json;        
+    public String getLogMensagem(DadoClima dado) {
+        return gson.toJson(dado);
     }
-    
-    
 }

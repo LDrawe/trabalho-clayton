@@ -5,57 +5,37 @@
 package com.ufes.trabalhodadosclima.log;
 
 import com.ufes.trabalhodadosclima.log.json.LogJSON;
+import com.ufes.trabalhodadosclima.log.xml.LogXML;
 import com.ufes.trabalhodadosclima.model.DadoClima;
+import com.ufes.trabalhodadosclima.presenter.ErrorPresenter;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  *
  * @author tallesh
  */
 public class Log {
-    private static File file;
-    private String type;
-    
-    private LogJSON logJson;
-    
-        public Log(){
-            logJson = new LogJSON();
-        }
-    
-    public void setLogType(String type){
-        this.type = type;
-    }
-    
-    public void makeLog(DadoClima dadoClima, boolean added){
-        String content = null;
-        if(type.equals("xml")){
-            //content = logXml.getLogMessage(dadoClima, added);
-        }else{
-            content = logJson.getLogMessage(dadoClima, added);
-        }
-            
-        try{
-            appendToFile(content);
-        }catch (IOException e){
-            System.out.println(e);
-        }
-    }
-    
-    private void appendToFile(String text) throws IOException{
-        file = new File("./assets" + type);
-        BufferedWriter bw;
-        if(!file.exists()){
-            file.createNewFile();
-        }
-        bw = new BufferedWriter(new FileWriter(file, true));
+    private final ILog logAdapter;
 
-        bw.write(text);
-        bw.newLine();
-
-        bw.close();
+    public Log(ILog logAdapter) {
+        this.logAdapter = logAdapter;
     }
-    
+
+    public void log(DadoClima dado) {
+        String logMessage = logAdapter.getLogMensagem(dado);
+        salvarEmArquivo(logMessage);
+    }
+
+    private void salvarEmArquivo(String logMessage) {
+        try (FileWriter fileWriter = new FileWriter("dados_climaticos.log", true);
+             PrintWriter printWriter = new PrintWriter(fileWriter)) {
+            printWriter.println(logMessage);
+        } catch (IOException e) {
+            new ErrorPresenter("Erro ao salvar o arquivo de log.");
+        }
+    }
 }

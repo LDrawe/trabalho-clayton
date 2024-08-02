@@ -4,7 +4,10 @@
  */
 package com.ufes.trabalhodadosclima.presenter;
 
+
+import com.ufes.trabalhodadosclima.log.ILog;
 import com.ufes.trabalhodadosclima.log.Log;
+import com.ufes.trabalhodadosclima.log.json.LogJSON;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -13,19 +16,29 @@ import com.ufes.trabalhodadosclima.model.DadoClima;
 import com.ufes.trabalhodadosclima.observer.EstacaoClimaticaObservavel;
 import com.ufes.trabalhodadosclima.model.DadosCollection;
 import com.ufes.trabalhodadosclima.view.DadosDoTempoView;
+
+import com.ufes.trabalhodadosclima.presenter.ConfiguracoesPresenter;
+
+import com.ufes.trabalhodadosclima.presenter.ConfiguracoesPresenter;
+
+import com.ufes.trabalhodadosclima.observer.EstacaoClimaticaObservavel;
+
 /**
  *
  * @author talles.h.santos
  */
 public class DadosDoTempoPresenter {
-
+    
     private DadosDoTempoView view;
     private EstacaoClimaticaObservavel observavel;
-    Log log;
-
-    public DadosDoTempoPresenter(DadosDoTempoView view, EstacaoClimaticaObservavel observavel) {
+    private ConfiguracoesPresenter configuracoesPresenter;    
+ 
+ 
+    public DadosDoTempoPresenter(DadosDoTempoView view, EstacaoClimaticaObservavel observavel, ConfiguracoesPresenter configuracoesPresenter) {
         this.view = view;
+        this.configuracoesPresenter = configuracoesPresenter;
         this.observavel = observavel;
+
         view.setTitle("Dados do Tempo");
         view.getBotao().addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -48,12 +61,13 @@ public class DadosDoTempoPresenter {
             DadosCollection.getInstance().addDado(dados);
 
             observavel.atualizarMedicoes(dados);
+            
+            configuracoesPresenter.getLog().log(dados);
 
             view.getTemp().setText("");
             view.getHumidity().setText("");
             view.getPressure().setText("");
             view.getData().setText("");
-            log.makeLog(dados, true);
         } catch (DateTimeParseException e) {
             new ErrorPresenter("O formato de data inserido não é válido");
         } catch (NumberFormatException e) {
