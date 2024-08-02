@@ -18,3 +18,32 @@
 {"temperatura":12.0,"umidade":1.0,"pressao":23.0,"data":"2002-02-25"}
 {"temperatura":12.0,"umidade":13.0,"pressao":41.0,"data":"2002-06-02"}
 {"temperatura":12.0,"umidade":32.0,"pressao":43.0,"data":"2002-06-02"}
+{"dado":{"temperatura":12.0,"umidade":12.0,"pressao":12.0,"data":"2022-05-02"},"operacao":"Adicionado"}
+null
+{"dado":{"temperatura":12.0,"umidade":13.0,"pressao":14.0,"data":"2002-05-02"},"operacao":"Adicionado"}
+null
+null
+null
+null
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<logEntry>
+    <dadoClima>
+        <temperatura>23.0</temperatura>
+        <umidade>43.0</umidade>
+        <pressao>645.0</pressao>
+        <data>2001-01-01</data>
+    </dadoClima>
+    <operacao>Adicionado</operacao>
+</logEntry>
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<logEntry>
+    <dadoClima>
+        <temperatura>23.0</temperatura>
+        <umidade>43.0</umidade>
+        <pressao>645.0</pressao>
+        <data>2001-01-01</data>
+    </dadoClima>
+    <operacao>Removido</operacao>
+</logEntry>
+

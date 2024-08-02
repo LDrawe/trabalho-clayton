@@ -12,6 +12,6 @@ import com.ufes.trabalhodadosclima.model.DadoClima;
  */
 public interface ILog {
     
-    String getLogMensagem(DadoClima dado);
+    String getLogMensagem(DadoClima dado, Boolean removido);
     
 }

@@ -8,6 +8,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.ufes.trabalhodadosclima.adapter.LocalDateJsonAdapter;
 import com.ufes.trabalhodadosclima.log.ILog;
+import com.ufes.trabalhodadosclima.log.LogEntry;
 import com.ufes.trabalhodadosclima.model.DadoClima;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -27,7 +28,8 @@ public class LogJSON implements ILog {
     }
 
     @Override
-    public String getLogMensagem(DadoClima dado) {
-        return gson.toJson(dado);
+    public String getLogMensagem(DadoClima dado, Boolean removido) {
+        String operacao = removido ? "Removido" : "Adicionado";
+        return gson.toJson(new LogEntry(dado, operacao));
     }
 }

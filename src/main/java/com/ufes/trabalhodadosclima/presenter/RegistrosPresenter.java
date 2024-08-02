@@ -22,13 +22,12 @@ import javax.swing.table.DefaultTableModel;
 public class RegistrosPresenter implements IPainel {
     private RegistrosView view;
     private EstacaoClimaticaObservavel observavel;
-    //private ConfiguracoesPresenter configuracoesPresenter;  
-    private Logger logger = Logger.getLogger(RegistrosPresenter.class.getName());
+    private ConfiguracoesPresenter configuracoesPresenter;  
 
-    public RegistrosPresenter(RegistrosView view, EstacaoClimaticaObservavel observavel) {
+    public RegistrosPresenter(RegistrosView view, EstacaoClimaticaObservavel observavel, ConfiguracoesPresenter configuracoesPresenter) {
         this.view = view;
         this.observavel = observavel;
-        //this.configuracoesPresenter = configuracoesPresenter;
+        this.configuracoesPresenter = configuracoesPresenter;
         this.observavel.registrarPainel(this);
         view.getBotao().addActionListener(e -> {
             try {
@@ -69,7 +68,7 @@ public class RegistrosPresenter implements IPainel {
                 model.removeRow(selectedRow);
 
                 // Loga a remoção
-                logger.info("Dado removido: " + dadoRemovido.toString());
+                configuracoesPresenter.getLog().log(dadoRemovido, true);
             } else {
                 // Mensagem de erro se nenhuma linha for selecionada
                 new ErrorPresenter("Nenhuma linha selecionada para remoção.");

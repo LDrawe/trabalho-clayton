@@ -62,7 +62,7 @@ public class DadosDoTempoPresenter {
 
             observavel.atualizarMedicoes(dados);
             
-            configuracoesPresenter.getLog().log(dados);
+            configuracoesPresenter.getLog().log(dados, false);
 
             view.getTemp().setText("");
             view.getHumidity().setText("");

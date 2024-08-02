@@ -15,6 +15,7 @@ com\ufes\trabalhodadosclima\presenter\ConfiguracoesPresenter.class
 com\ufes\trabalhodadosclima\TrabalhoDadosClima.class
 com\ufes\trabalhodadosclima\observer\EstacaoClimaticaObservavel.class
 com\ufes\trabalhodadosclima\view\DadosDoTempoView$1.class
+com\ufes\trabalhodadosclima\log\LogEntry.class
 com\ufes\trabalhodadosclima\model\IPainel.class
 com\ufes\trabalhodadosclima\view\PrincipalView$1.class
 com\ufes\trabalhodadosclima\view\ErrorView.class

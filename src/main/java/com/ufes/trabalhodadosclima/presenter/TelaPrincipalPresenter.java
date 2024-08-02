@@ -62,7 +62,7 @@ public class TelaPrincipalPresenter {
         ConfiguracoesPresenter configuracoesPresenter = new ConfiguracoesPresenter(configuracoesView);
         DadosDoTempoPresenter dadosDoTempoPresenter = new DadosDoTempoPresenter(dadosTempoView, estacaoClimatica, configuracoesPresenter);
         MaximasMinimasPresenter maximasMinimasPresenter = new MaximasMinimasPresenter(maximasMinimasView, estacaoClimatica);
-        RegistrosPresenter registrosPresenter = new RegistrosPresenter(registrosView, estacaoClimatica);
+        RegistrosPresenter registrosPresenter = new RegistrosPresenter(registrosView, estacaoClimatica, configuracoesPresenter);
         UltimaAtualizacaoTempoPresenter ultimaAtualizacaoTempoPresenter = new UltimaAtualizacaoTempoPresenter(ultimaAtualizacaoView, estacaoClimatica);
         DadosMediosPresenter dadosMediosPresenter = new DadosMediosPresenter(dadosMediosView, estacaoClimatica);
 

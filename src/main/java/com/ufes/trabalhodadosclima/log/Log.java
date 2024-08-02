@@ -25,8 +25,8 @@ public class Log {
         this.logAdapter = logAdapter;
     }
 
-    public void log(DadoClima dado) {
-        String logMessage = logAdapter.getLogMensagem(dado);
+    public void log(DadoClima dado, Boolean removido) {
+        String logMessage = logAdapter.getLogMensagem(dado, removido);
         salvarEmArquivo(logMessage);
     }
 

@@ -5,6 +5,7 @@
 package com.ufes.trabalhodadosclima.log.xml;
 
 import com.ufes.trabalhodadosclima.log.ILog;
+import com.ufes.trabalhodadosclima.log.LogEntry;
 import com.ufes.trabalhodadosclima.model.DadoClima;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
@@ -21,14 +22,14 @@ import java.time.format.DateTimeFormatter;
 public class LogXML implements ILog{
     
     @Override
-    public String getLogMensagem(DadoClima dado) {
+    public String getLogMensagem(DadoClima dado, Boolean removido) {
         try {
-            JAXBContext context = JAXBContext.newInstance(dado.getClass());
+            JAXBContext context = JAXBContext.newInstance(LogEntry.class);
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
             
             StringWriter sw = new StringWriter();
-            marshaller.marshal(dado, sw);
+            marshaller.marshal(new LogEntry(dado, removido ? "Removido" : "Adicionado"), sw);
             return sw.toString();
         } catch (JAXBException e) {
             e.printStackTrace();
