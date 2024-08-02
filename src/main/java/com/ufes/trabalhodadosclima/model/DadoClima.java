@@ -4,6 +4,10 @@
  */
 package com.ufes.trabalhodadosclima.model;
 
+import com.ufes.trabalhodadosclima.adapter.LocalDateXmlAdapter;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -11,6 +15,7 @@ import java.util.List;
  *
  * @author tallesh
  */
+@XmlRootElement
 public class DadoClima {
 
     private float temperatura;
@@ -27,19 +32,27 @@ public class DadoClima {
         this.pressao = pressao;
         this.data = data;
     }
-
+    
+    public DadoClima() {
+    }
+    
+    @XmlElement
     public float getTemperatura() {
         return temperatura;
     }
 
+    @XmlElement
     public float getUmidade() {
         return umidade;
     }
-
+    
+    @XmlElement
     public float getPressao() {
         return pressao;
     }
-
+    
+    @XmlElement
+    @XmlJavaTypeAdapter(LocalDateXmlAdapter.class)
     public LocalDate getData() {
         return data;
     }
