@@ -12,6 +12,6 @@ import com.ufes.trabalhodadosclima.presenter.TelaPrincipalPresenter;
 public class TrabalhoDadosClima {
     
     public static void main(String[] args) {
-        TelaPrincipalPresenter principal = new TelaPrincipalPresenter();
+        new TelaPrincipalPresenter();
     }
 }

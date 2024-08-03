@@ -4,12 +4,14 @@
  */
 package com.ufes.trabalhodadosclima.model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author tallesh
  */
 public interface IPainel {
     
-    void atualizar(DadoClima dadoClima);
+    void atualizar(ArrayList<DadoClima> dados);
     
 }

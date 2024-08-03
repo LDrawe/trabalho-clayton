@@ -18,12 +18,6 @@ public class MaximasMinimasView extends JInternalFrame {
      * Creates new form MaximasMinimasView
      */
 
-    private DadoClima dados;
-
-    public void DadosClimaticosView(DadoClima dados) {
-        this.dados = dados;
-    }
-
     public MaximasMinimasView() {
         initComponents();
         setVisible(true);

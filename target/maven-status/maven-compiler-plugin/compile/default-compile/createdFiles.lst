@@ -2,7 +2,6 @@ com\ufes\trabalhodadosclima\log\json\LogJSON.class
 com\ufes\trabalhodadosclima\presenter\DadosDoTempoPresenter.class
 com\ufes\trabalhodadosclima\presenter\RegistrosPresenter.class
 com\ufes\trabalhodadosclima\view\UltimaAtualizacaoTempoView.class
-com\ufes\trabalhodadosclima\model\DadosCollection.class
 com\ufes\trabalhodadosclima\view\ConfiguracoesView$1.class
 com\ufes\trabalhodadosclima\presenter\TelaPrincipalPresenter.class
 com\ufes\trabalhodadosclima\model\DadoClima.class

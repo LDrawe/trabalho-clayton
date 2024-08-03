@@ -10,8 +10,6 @@ import com.ufes.trabalhodadosclima.adapter.LocalDateJsonAdapter;
 import com.ufes.trabalhodadosclima.log.ILog;
 import com.ufes.trabalhodadosclima.log.LogEntry;
 import com.ufes.trabalhodadosclima.model.DadoClima;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.time.LocalDate;
 
 /**

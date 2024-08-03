@@ -66,29 +66,12 @@ public class DadosDoTempoView extends JInternalFrame {
         dataLabel.setText("Data");
 
         dataInput.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
-        dataInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dataInputActionPerformed(evt);
-            }
-        });
 
         tempLabel.setText("Temperatura");
-
-        tempInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tempInputActionPerformed(evt);
-            }
-        });
 
         humidityLabel.setText("Umidade");
 
         pressureLabel.setText("Pressao");
-
-        pressureInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pressureInputActionPerformed(evt);
-            }
-        });
 
         incluirBotao.setText("Incluir");
 
@@ -147,21 +130,6 @@ public class DadosDoTempoView extends JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-
-    
-
-    private void tempInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tempInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tempInputActionPerformed
-
-    private void dataInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dataInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dataInputActionPerformed
-
-    private void pressureInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pressureInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pressureInputActionPerformed
 
     /**
      * @param args the command line arguments

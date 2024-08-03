@@ -5,12 +5,13 @@
 package com.ufes.trabalhodadosclima.presenter;
 
 import com.ufes.trabalhodadosclima.model.DadoClima;
+import com.ufes.trabalhodadosclima.model.EstacaoClimaticaObservavel;
 import com.ufes.trabalhodadosclima.model.IPainel;
-import com.ufes.trabalhodadosclima.observer.EstacaoClimaticaObservavel;
 import com.ufes.trabalhodadosclima.view.RegistrosView;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
@@ -22,9 +23,11 @@ import javax.swing.table.DefaultTableModel;
 public class RegistrosPresenter implements IPainel {
     private RegistrosView view;
     private EstacaoClimaticaObservavel observavel;
-    private ConfiguracoesPresenter configuracoesPresenter;  
+    private ConfiguracoesPresenter configuracoesPresenter;
+    private int numOfRegisters = 0;
 
-    public RegistrosPresenter(RegistrosView view, EstacaoClimaticaObservavel observavel, ConfiguracoesPresenter configuracoesPresenter) {
+    public RegistrosPresenter(RegistrosView view, EstacaoClimaticaObservavel observavel,
+            ConfiguracoesPresenter configuracoesPresenter) {
         this.view = view;
         this.observavel = observavel;
         this.configuracoesPresenter = configuracoesPresenter;
@@ -39,12 +42,18 @@ public class RegistrosPresenter implements IPainel {
     }
 
     @Override
-    public void atualizar(DadoClima dadoClima) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        String dataString = dadoClima.getData().format(formatter);
-        view.getTable().addRow(new Object[]{dataString, dadoClima.getTemperatura(), dadoClima.getUmidade(), dadoClima.getPressao()});
+    public void atualizar(ArrayList<DadoClima> dados) {
+        int tamanho = dados.size();
+        if (tamanho > numOfRegisters) {
+            DadoClima dadoClima = dados.get(tamanho - 1);
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            String dataString = dadoClima.getData().format(formatter);
+            view.getTable().addRow(new Object[] { dataString, dadoClima.getTemperatura(), dadoClima.getUmidade(),
+                    dadoClima.getPressao() });
+        }
+        numOfRegisters = tamanho;
     }
-    
+
     private void handleRemoveButtonClick() throws Exception {
         try {
             int selectedRow = view.getjTabela().getSelectedRow();
@@ -66,7 +75,7 @@ public class RegistrosPresenter implements IPainel {
                 // Remove a linha da tabela
                 DefaultTableModel model = (DefaultTableModel) view.getjTabela().getModel();
                 model.removeRow(selectedRow);
-
+                observavel.removeDado(selectedRow);
                 // Loga a remoção
                 configuracoesPresenter.getLog().log(dadoRemovido, true);
             } else {
@@ -85,8 +94,4 @@ public class RegistrosPresenter implements IPainel {
             throw new Exception(e);
         }
     }
-
-
-
- 
 }

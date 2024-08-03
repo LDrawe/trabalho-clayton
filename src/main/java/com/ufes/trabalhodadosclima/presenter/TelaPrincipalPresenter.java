@@ -4,9 +4,6 @@
  */
 package com.ufes.trabalhodadosclima.presenter;
 
-import com.ufes.trabalhodadosclima.log.ILog;
-import com.ufes.trabalhodadosclima.log.Log;
-import com.ufes.trabalhodadosclima.log.json.LogJSON;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -18,17 +15,14 @@ import javax.swing.JInternalFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
-import com.ufes.trabalhodadosclima.observer.EstacaoClimaticaObservavel;
+import com.ufes.trabalhodadosclima.model.EstacaoClimaticaObservavel;
 import com.ufes.trabalhodadosclima.view.ConfiguracoesView;
 import com.ufes.trabalhodadosclima.view.DadosDoTempoView;
 import com.ufes.trabalhodadosclima.view.DadosMediosView;
 import com.ufes.trabalhodadosclima.view.MaximasMinimasView;
-import com.ufes.trabalhodadosclima.view.PrincipalView;
 import com.ufes.trabalhodadosclima.view.RegistrosView;
 import com.ufes.trabalhodadosclima.view.TelaPrincipalView;
 import com.ufes.trabalhodadosclima.view.UltimaAtualizacaoTempoView;
-import java.awt.Insets;
-import javax.swing.border.EmptyBorder;
 
 /**
  * Main presenter for the application
@@ -60,11 +54,11 @@ public class TelaPrincipalPresenter {
         ConfiguracoesView configuracoesView = new ConfiguracoesView();
 
         ConfiguracoesPresenter configuracoesPresenter = new ConfiguracoesPresenter(configuracoesView);
-        DadosDoTempoPresenter dadosDoTempoPresenter = new DadosDoTempoPresenter(dadosTempoView, estacaoClimatica, configuracoesPresenter);
-        MaximasMinimasPresenter maximasMinimasPresenter = new MaximasMinimasPresenter(maximasMinimasView, estacaoClimatica);
-        RegistrosPresenter registrosPresenter = new RegistrosPresenter(registrosView, estacaoClimatica, configuracoesPresenter);
-        UltimaAtualizacaoTempoPresenter ultimaAtualizacaoTempoPresenter = new UltimaAtualizacaoTempoPresenter(ultimaAtualizacaoView, estacaoClimatica);
-        DadosMediosPresenter dadosMediosPresenter = new DadosMediosPresenter(dadosMediosView, estacaoClimatica);
+        new DadosDoTempoPresenter(dadosTempoView, estacaoClimatica, configuracoesPresenter);
+        new MaximasMinimasPresenter(maximasMinimasView, estacaoClimatica);
+        new RegistrosPresenter(registrosView, estacaoClimatica, configuracoesPresenter);
+        new UltimaAtualizacaoTempoPresenter(ultimaAtualizacaoView, estacaoClimatica);
+        new DadosMediosPresenter(dadosMediosView, estacaoClimatica);
 
 
         SwingUtilities.invokeLater(() -> {
@@ -76,25 +70,17 @@ public class TelaPrincipalPresenter {
             }
 
             final ArrayList<JInternalFrame> janelas = new ArrayList<>();
-            Collections.addAll(janelas, maximasMinimasView, registrosView, ultimaAtualizacaoView, dadosMediosView,
-                dadosTempoView, configuracoesView);
+            Collections.addAll(janelas, maximasMinimasView, registrosView, ultimaAtualizacaoView, configuracoesView,
+            dadosMediosView, dadosTempoView);
 
             desktopPane.setLayout(new GridLayout(2, 3, 20, 20));
-            
-            int maxWidth = 0;
-            int maxHeight = 0;
-            for (JInternalFrame janela : janelas) {
-                Dimension size = janela.getPreferredSize();
-                if (size.width > maxWidth) maxWidth = size.width;
-                if (size.height > maxHeight) maxHeight = size.height;
-            }
-
+            int i = 0;
             // Resize all internal frames to the maximum size
             for (JInternalFrame janela : janelas) {
-                janela.setPreferredSize(new Dimension(maxWidth, maxHeight));
-                janela.setSize(new Dimension(maxWidth, maxHeight)); // Ensure the size is applied immediately
                 desktopPane.add(janela);
+                janela.setLayer(i);
                 janela.setVisible(true);
+                i++;
             }
             
             view.add(desktopPane, BorderLayout.CENTER);

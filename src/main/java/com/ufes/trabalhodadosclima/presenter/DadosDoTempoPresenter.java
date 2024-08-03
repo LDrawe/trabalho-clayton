@@ -5,24 +5,13 @@
 package com.ufes.trabalhodadosclima.presenter;
 
 
-import com.ufes.trabalhodadosclima.log.ILog;
-import com.ufes.trabalhodadosclima.log.Log;
-import com.ufes.trabalhodadosclima.log.json.LogJSON;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
 import com.ufes.trabalhodadosclima.model.DadoClima;
-import com.ufes.trabalhodadosclima.observer.EstacaoClimaticaObservavel;
-import com.ufes.trabalhodadosclima.model.DadosCollection;
+import com.ufes.trabalhodadosclima.model.EstacaoClimaticaObservavel;
 import com.ufes.trabalhodadosclima.view.DadosDoTempoView;
-
-import com.ufes.trabalhodadosclima.presenter.ConfiguracoesPresenter;
-
-import com.ufes.trabalhodadosclima.presenter.ConfiguracoesPresenter;
-
-import com.ufes.trabalhodadosclima.observer.EstacaoClimaticaObservavel;
-
 /**
  *
  * @author talles.h.santos
@@ -58,10 +47,8 @@ public class DadosDoTempoPresenter {
             LocalDate data = LocalDate.parse(dataString, formatter);
 
             DadoClima dados = new DadoClima(temperatura, umidade, pressao, data);
-            DadosCollection.getInstance().addDado(dados);
+            observavel.addDado(dados);
 
-            observavel.atualizarMedicoes(dados);
-            
             configuracoesPresenter.getLog().log(dados, false);
 
             view.getTemp().setText("");

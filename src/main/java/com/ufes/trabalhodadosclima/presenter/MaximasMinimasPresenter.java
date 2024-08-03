@@ -4,16 +4,17 @@
  */
 package com.ufes.trabalhodadosclima.presenter;
 
+import java.util.ArrayList;
+
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
-import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.chart.plot.PlotOrientation;
 
 import com.ufes.trabalhodadosclima.model.DadoClima;
+import com.ufes.trabalhodadosclima.model.EstacaoClimaticaObservavel;
 import com.ufes.trabalhodadosclima.model.IPainel;
 import com.ufes.trabalhodadosclima.model.MaximasMinimas;
-import com.ufes.trabalhodadosclima.observer.EstacaoClimaticaObservavel;
 import com.ufes.trabalhodadosclima.view.MaximasMinimasView;
 
 /**
@@ -46,46 +47,50 @@ public class MaximasMinimasPresenter implements IPainel {
     }
 
     @Override
-    public void atualizar(DadoClima dadoClima) {
-        float temperatura = dadoClima.getTemperatura();
-        float pressao = dadoClima.getPressao();
-        float umidade = dadoClima.getUmidade();
+    public void atualizar(ArrayList<DadoClima> dados) {
+        float maximaTemperatura = Float.MIN_VALUE;
+        float minimaTemperatura = Float.MAX_VALUE;
+        float maximaPressao = Float.MIN_VALUE;
+        float minimaPressao = Float.MAX_VALUE;
+        float maximaUmidade = Float.MIN_VALUE;
+        float minimaUmidade = Float.MAX_VALUE;
+        dataset.clear();
 
-        float mintemperatura = maximasMinimas.getMinimaTemperatura();
-        float maxTemperatura = maximasMinimas.getMaximaTemperatura();
-        float minPressao = maximasMinimas.getMinimaPressao();
-        float maxPressao = maximasMinimas.getMaximaPressao();
-        float minUmidade = maximasMinimas.getMinimaUmidade();
-        float maxUmidade = maximasMinimas.getMaximaUmidade();
+        for (DadoClima dadoClima : dados) {
+            float temperatura = dadoClima.getTemperatura();
+            float pressao = dadoClima.getPressao();
+            float umidade = dadoClima.getUmidade();
 
-        // Update temperature
-        if (temperatura > maxTemperatura) {
-            maximasMinimas.setMaximaTemperatura(temperatura);
-            dataset.addValue(temperatura, "Max", "Temperatura");
-        }
-        if (temperatura < mintemperatura) {
-            maximasMinimas.setMinimaTemperatura(temperatura);
-            dataset.addValue(temperatura, "Min", "Temperatura");
-        }
+            // Update temperature
+            if (temperatura > maximaTemperatura) {
+                maximaTemperatura = temperatura;
+                dataset.addValue(temperatura, "Max", "Temperatura");
+            }
+            if (temperatura < minimaTemperatura) {
+                minimaTemperatura = temperatura;
+                maximasMinimas.setMinimaTemperatura(temperatura);
+                dataset.addValue(temperatura, "Min", "Temperatura");
+            }
 
-        // Update humidity
-        if (umidade > maxUmidade) {
-            maximasMinimas.setMaximaUmidade(umidade);
-            dataset.addValue(umidade, "Max", "Humidade");
-        }
-        if (umidade < minUmidade) {
-            maximasMinimas.setMinimaUmidade(umidade);
-            dataset.addValue(umidade, "Min", "Humidade");
-        }
+            // Update humidity
+            if (umidade > maximaUmidade) {
+                maximaUmidade = umidade;
+                dataset.addValue(umidade, "Max", "Humidade");
+            }
+            if (umidade < minimaUmidade) {
+                minimaUmidade = umidade;
+                dataset.addValue(umidade, "Min", "Humidade");
+            }
 
-        // Update pressure
-        if (pressao > maxPressao) {
-            maximasMinimas.setMaximaPressao(pressao);
-            dataset.addValue(pressao, "Max", "Pressão");
-        }
-        if (pressao < minPressao) {
-            maximasMinimas.setMinimaPressao(pressao);
-            dataset.addValue(pressao, "Min", "Pressão");
+            // Update pressure
+            if (pressao > maximaPressao) {
+                maximaPressao = pressao;
+                dataset.addValue(pressao, "Max", "Pressão");
+            }
+            if (pressao < minimaPressao) {
+                minimaPressao = pressao;
+                dataset.addValue(pressao, "Min", "Pressão");
+            }
         }
     }
 }

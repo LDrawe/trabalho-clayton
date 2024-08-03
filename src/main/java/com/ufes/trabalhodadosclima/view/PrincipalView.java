@@ -43,11 +43,7 @@ public class PrincipalView extends javax.swing.JFrame {
         jMenu1.setText("Configurações");
 
         menuConfig.setText("Mudar Log");
-        menuConfig.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuConfigActionPerformed(evt);
-            }
-        });
+        
         jMenu1.add(menuConfig);
 
         jMenuBar1.add(jMenu1);
@@ -67,10 +63,6 @@ public class PrincipalView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void menuConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuConfigActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_menuConfigActionPerformed
 
     /**
      * @param args the command line arguments

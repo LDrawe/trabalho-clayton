@@ -71,16 +71,16 @@ public class UltimaAtualizacaoTempoView extends JInternalFrame {
         dataTitle.setText("Data");
 
         lastHumidityLabel.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
-        lastHumidityLabel.setText("Umidade");
+        lastHumidityLabel.setText("-");
 
         lastDateLabel.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
-        lastDateLabel.setText("DD/MM/AAA");
+        lastDateLabel.setText("-");
 
         lastPressureLabel.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
-        lastPressureLabel.setText("Pressão");
+        lastPressureLabel.setText("-");
 
         lastTempLabel.setFont(new java.awt.Font("DejaVu Sans", 1, 18)); // NOI18N
-        lastTempLabel.setText("Temperatura");
+        lastTempLabel.setText("-");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

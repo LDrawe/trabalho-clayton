@@ -5,10 +5,11 @@
 package com.ufes.trabalhodadosclima.presenter;
 
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 import com.ufes.trabalhodadosclima.model.DadoClima;
+import com.ufes.trabalhodadosclima.model.EstacaoClimaticaObservavel;
 import com.ufes.trabalhodadosclima.model.IPainel;
-import com.ufes.trabalhodadosclima.observer.EstacaoClimaticaObservavel;
 import com.ufes.trabalhodadosclima.view.UltimaAtualizacaoTempoView;
 
 /**
@@ -28,10 +29,18 @@ public class UltimaAtualizacaoTempoPresenter implements IPainel{
     }
 
     @Override
-    public void atualizar(DadoClima dadoClima) {
-        view.getTempLabel().setText(String.valueOf(dadoClima.getTemperatura()));
-        view.getHumidityLabel().setText(String.valueOf(dadoClima.getUmidade()));
-        view.getPressureLabel().setText(String.valueOf(dadoClima.getPressao()));
-        view.getDataLabel().setText(dadoClima.getData().format(outputFormatter));
+    public void atualizar(ArrayList<DadoClima> dados) {
+        if (dados.size() == 0) {
+            view.getTempLabel().setText("-");
+            view.getHumidityLabel().setText("-");
+            view.getPressureLabel().setText("-");
+            view.getDataLabel().setText("-");
+            return;
+        }
+
+        view.getTempLabel().setText(String.valueOf(dados.get(dados.size() - 1).getTemperatura()));
+        view.getHumidityLabel().setText(String.valueOf(dados.get(dados.size() - 1).getUmidade()));
+        view.getPressureLabel().setText(String.valueOf(dados.get(dados.size() - 1).getPressao()));
+        view.getDataLabel().setText(dados.get(dados.size() - 1).getData().format(outputFormatter));
     }
 }

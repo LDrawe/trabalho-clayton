@@ -10,11 +10,7 @@ import com.ufes.trabalhodadosclima.model.DadoClima;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Marshaller;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.io.StringWriter;
-import java.time.format.DateTimeFormatter;
-
 /**
  *
  * @author talle
