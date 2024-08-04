@@ -1,4 +1,4 @@
 *.class
 *.json
-/target
 *.xml
+/target/
