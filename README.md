@@ -1,11 +1,11 @@
 
 # Trabalho de Dados Climáticos
-### Exercício avaliativo - Projetos de Sistemas de Software
-> Atividade para complemento de nota e aprendizado usando padrões de projeto - 2024
+### Exercício avaliativo - Projetos de Sistemas de Software - COM10508
+> Atividade para complemento de nota e aprendizado usando padrões de projeto - 2024-1
 >
-> Professor orientador: Clayton Vieira Fraga
+> Professor orientador: Clayton Vieira Fraga Filho
 >
-> Dupla: Talles Henrique & Eduardo Portilho
+> Dupla: Talles Henrique Teófilo dos Santos & Eduardo de Mello Portilho
 
 Este projeto é um aplicativo para gerenciamento de dados climáticos, desenvolvido em Java usando o padrão de arquitetura MVP (Model-View-Presenter). O sistema permite a inserção, visualização e remoção de dados de temperatura, umidade, pressão e data, além de oferecer funcionalidades de log em formatos JSON e XML.
 
@@ -83,7 +83,7 @@ Contribuições são bem-vindas! Se você encontrar problemas ou tiver sugestõe
 
 ## Licença
 
-Este projeto é licenciado sob a [MIT License](LICENSE).
+Este projeto é licenciado sob os termos da licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais informações.
 
 ## Contato
 
