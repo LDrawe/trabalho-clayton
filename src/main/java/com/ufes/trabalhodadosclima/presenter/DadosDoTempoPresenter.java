@@ -64,7 +64,7 @@ public class DadosDoTempoPresenter {
 
     public DadosDoTempoView getView() {
         if (view == null) {
-            System.err.println("dadosTempoView não foi inicializado.");
+            new ErrorPresenter("dadosTempoView não foi inicializado.");
         }
         return view;
     }

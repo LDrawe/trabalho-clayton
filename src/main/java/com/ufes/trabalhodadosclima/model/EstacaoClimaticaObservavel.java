@@ -31,7 +31,6 @@ public class EstacaoClimaticaObservavel {
 
     public void removeDado(int index) {
         dados.remove(index);
-        System.err.println("ta chegando no remove");
         notificarPaineis(dados);
     }
 
@@ -45,7 +44,6 @@ public class EstacaoClimaticaObservavel {
 
     private void notificarPaineis(ArrayList<DadoClima> dados) {
         for (IPainel painel : paineis) {
-            System.err.println("notificando todos os paineis");
             painel.atualizar(dados);
         }
     }

@@ -61,7 +61,7 @@ public class MaximasMinimasPresenter implements IPainel {
             float pressao = dadoClima.getPressao();
             float umidade = dadoClima.getUmidade();
 
-            // Update temperature
+            // Update temperatura
             if (temperatura > maximaTemperatura) {
                 maximaTemperatura = temperatura;
                 dataset.addValue(temperatura, "Max", "Temperatura");
@@ -72,17 +72,17 @@ public class MaximasMinimasPresenter implements IPainel {
                 dataset.addValue(temperatura, "Min", "Temperatura");
             }
 
-            // Update humidity
+            // Update umidade
             if (umidade > maximaUmidade) {
                 maximaUmidade = umidade;
-                dataset.addValue(umidade, "Max", "Humidade");
+                dataset.addValue(umidade, "Max", "Umidade");
             }
             if (umidade < minimaUmidade) {
                 minimaUmidade = umidade;
-                dataset.addValue(umidade, "Min", "Humidade");
+                dataset.addValue(umidade, "Min", "Umidade");
             }
 
-            // Update pressure
+            // Update pressão
             if (pressao > maximaPressao) {
                 maximaPressao = pressao;
                 dataset.addValue(pressao, "Max", "Pressão");

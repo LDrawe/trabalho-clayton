@@ -1,8 +1,10 @@
+C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\log\LogEntry.java
 C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\view\DadosDoTempoView.java
 C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\presenter\DadosDoTempoPresenter.java
 C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\log\ILog.java
 C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\model\IPainel.java
 C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\view\DadosMediosView.java
+C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\log\adapter\LocalDateJsonAdapter.java
 C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\log\json\LogJSON.java
 C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\view\UltimaAtualizacaoTempoView.java
 C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\model\DadoClima.java
@@ -15,14 +17,13 @@ C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufe
 C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\presenter\MaximasMinimasPresenter.java
 C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\TrabalhoDadosClima.java
 C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\view\PrincipalView.java
+C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\model\EstacaoClimaticaObservavel.java
 C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\log\xml\LogXML.java
 C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\model\MaximasMinimas.java
 C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\presenter\UltimaAtualizacaoTempoPresenter.java
 C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\presenter\ErrorPresenter.java
 C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\view\ConfiguracoesView.java
 C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\view\MaximasMinimasView.java
-C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\adapter\LocalDateXmlAdapter.java
 C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\presenter\ConfiguracoesPresenter.java
 C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\presenter\RegistrosPresenter.java
-C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\observer\EstacaoClimaticaObservavel.java
-C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\adapter\LocalDateJsonAdapter.java
+C:\Users\talle\OneDrive\Documentos\GitHub\trabalho-clayton\src\main\java\com\ufes\trabalhodadosclima\log\adapter\LocalDateXmlAdapter.java

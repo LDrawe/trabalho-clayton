@@ -22,7 +22,8 @@ public class ConfiguracoesPresenter {
 
     public ConfiguracoesPresenter(ConfiguracoesView view) {
         this.view = view;
-        this.log = new Log(new LogJSON());
+        logAdapter = new LogJSON();
+        log = new Log(logAdapter, "dados_climaticos.json");
 
         view.setTitle("Mudar Log");
         view.getSalvarJButton().addActionListener(e -> salvarConfiguracoes());
@@ -40,15 +41,17 @@ public class ConfiguracoesPresenter {
             switch (selectedLog) {
                 case "JSON":
                     logAdapter = new LogJSON();
+                    log = new Log(logAdapter, "dados_climaticos.json");
                     break;
                 case "XML":
                     logAdapter = new LogXML();
+                    log = new Log(logAdapter, "dados_climaticos.xml");
                     break;
                 default:
                     logAdapter = new LogJSON();
+                    log = new Log(logAdapter, "dados_climaticos.json");
                     break;
             }
-            log = new Log(logAdapter); // Atualiza a instância do log com o novo logAdapter
         }
     }
 

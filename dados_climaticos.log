@@ -68,3 +68,5 @@ null
 {"dado":{"temperatura":19.5,"umidade":3.5,"pressao":1.4,"data":"2002-02-22"},"operacao":"Adicionado"}
 {"dado":{"temperatura":11.0,"umidade":11.0,"pressao":11.0,"data":"1999-11-11"},"operacao":"Removido"}
 {"dado":{"temperatura":19.5,"umidade":3.5,"pressao":1.4,"data":"2002-02-22"},"operacao":"Removido"}
+{"dado":{"temperatura":12.0,"umidade":42.0,"pressao":43.0,"data":"2002-06-02"},"operacao":"Adicionado"}
+{"dado":{"temperatura":12.0,"umidade":42.0,"pressao":43.0,"data":"2002-06-02"},"operacao":"Removido"}

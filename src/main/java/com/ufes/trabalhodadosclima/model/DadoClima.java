@@ -4,7 +4,7 @@
  */
 package com.ufes.trabalhodadosclima.model;
 
-import com.ufes.trabalhodadosclima.adapter.LocalDateXmlAdapter;
+import com.ufes.trabalhodadosclima.log.adapter.LocalDateXmlAdapter;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;

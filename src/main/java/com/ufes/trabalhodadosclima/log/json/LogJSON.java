@@ -6,7 +6,7 @@ package com.ufes.trabalhodadosclima.log.json;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.ufes.trabalhodadosclima.adapter.LocalDateJsonAdapter;
+import com.ufes.trabalhodadosclima.log.adapter.LocalDateJsonAdapter;
 import com.ufes.trabalhodadosclima.log.ILog;
 import com.ufes.trabalhodadosclima.log.LogEntry;
 import com.ufes.trabalhodadosclima.model.DadoClima;

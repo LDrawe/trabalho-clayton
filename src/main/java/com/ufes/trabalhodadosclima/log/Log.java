@@ -16,9 +16,11 @@ import java.io.PrintWriter;
  */
 public class Log {
     private final ILog logAdapter;
+    private final String filePath;
 
-    public Log(ILog logAdapter) {
+    public Log(ILog logAdapter, String filePath) {
         this.logAdapter = logAdapter;
+        this.filePath = filePath;
     }
 
     public void log(DadoClima dado, Boolean removido) {
@@ -27,9 +29,9 @@ public class Log {
     }
 
     private void salvarEmArquivo(String logMessage) {
-        try (FileWriter fileWriter = new FileWriter("dados_climaticos.log", true);
-             PrintWriter printWriter = new PrintWriter(fileWriter)) {
-            printWriter.println(logMessage);
+        try (FileWriter fileWriter = new FileWriter(filePath, true);
+                PrintWriter printWriter = new PrintWriter(fileWriter)) {
+                printWriter.println(logMessage);
         } catch (IOException e) {
             new ErrorPresenter("Erro ao salvar o arquivo de log.");
         }

@@ -32,10 +32,10 @@ public class TelaPrincipalPresenter {
     private JDesktopPane desktopPane;
 
     public TelaPrincipalPresenter() {
-        configurarTela();
+        configurarTelas();
     }
 
-    private void configurarTela() {
+    private void configurarTelas() {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         } catch (Exception e) {
@@ -43,6 +43,7 @@ public class TelaPrincipalPresenter {
         }
 
         view = new TelaPrincipalView();
+        view.setTitle("Dados do Clima");
 
         EstacaoClimaticaObservavel estacaoClimatica = new EstacaoClimaticaObservavel();
         
@@ -65,7 +66,7 @@ public class TelaPrincipalPresenter {
             desktopPane = view.getDesktopPane();
             
             if (desktopPane == null) {
-                System.err.println("JDesktopPane é null.");
+                new ErrorPresenter("JDesktopPane é null.");
                 return;
             }
 
@@ -75,7 +76,6 @@ public class TelaPrincipalPresenter {
 
             desktopPane.setLayout(new GridLayout(2, 3, 20, 20));
             int i = 0;
-            // Resize all internal frames to the maximum size
             for (JInternalFrame janela : janelas) {
                 desktopPane.add(janela);
                 janela.setLayer(i);
@@ -84,7 +84,7 @@ public class TelaPrincipalPresenter {
             }
             
             view.add(desktopPane, BorderLayout.CENTER);
-            view.setMinimumSize(new Dimension(1080, 700));
+            view.setMinimumSize(new Dimension(1400, 800));
         });
     }
 }

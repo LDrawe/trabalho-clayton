@@ -59,37 +59,29 @@ public class RegistrosPresenter implements IPainel {
             int selectedRow = view.getjTabela().getSelectedRow();
 
             if (selectedRow >= 0) {
-                // Obtém os dados da linha selecionada
                 String dataString = (String) view.getjTabela().getValueAt(selectedRow, 0);
                 float temperatura = Float.parseFloat(view.getjTabela().getValueAt(selectedRow, 1).toString());
                 float umidade = Float.parseFloat(view.getjTabela().getValueAt(selectedRow, 2).toString());
                 float pressao = Float.parseFloat(view.getjTabela().getValueAt(selectedRow, 3).toString());
 
-                // Converte a string da data para LocalDate
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
                 LocalDate data = LocalDate.parse(dataString, formatter);
 
-                // Cria o objeto DadoClima para log
                 DadoClima dadoRemovido = new DadoClima(temperatura, umidade, pressao, data);
 
-                // Remove a linha da tabela
                 DefaultTableModel model = (DefaultTableModel) view.getjTabela().getModel();
                 model.removeRow(selectedRow);
                 observavel.removeDado(selectedRow);
-                // Loga a remoção
+
                 configuracoesPresenter.getLog().log(dadoRemovido, true);
             } else {
-                // Mensagem de erro se nenhuma linha for selecionada
                 new ErrorPresenter("Nenhuma linha selecionada para remoção.");
             }
         } catch (DateTimeParseException e) {
-            // Trata exceção de formatação de data
             new ErrorPresenter("Formato de data inválido.");
         } catch (NumberFormatException e) {
-            // Trata exceção de conversão de número
             new ErrorPresenter("Formato de um ou mais valores numéricos inválido.");
         } catch (Exception e) {
-            // Trata outras exceções
             new ErrorPresenter("Erro ao remover o dado.");
             throw new Exception(e);
         }

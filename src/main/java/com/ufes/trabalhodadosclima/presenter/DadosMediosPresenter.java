@@ -23,32 +23,45 @@ public class DadosMediosPresenter implements IPainel {
         this.view = view;
         this.observavel = observavel;
         this.view.setTitle("Dados Médios");
-
+        this.inicializaDados(this.observavel.getSize());
         this.observavel.registrarPainel(this);
     }
 
     @Override
     public void atualizar(ArrayList<DadoClima> dados) {
         int tamanho = this.observavel.getSize();
-        if (tamanho == 0) {
+        this.inicializaDados(tamanho);
+
+        if (tamanho > 0) {
+            float somaTemperaturas = 0;
+            float somaUmidades = 0;
+            float somaPressoes = 0;
+
+            for (int i = 0; i < tamanho; i++) {
+                somaTemperaturas += dados.get(i).getTemperatura();
+                somaUmidades += dados.get(i).getUmidade();
+                somaPressoes += dados.get(i).getPressao();
+            }
+
+            view.getTempLabel().setText(String.valueOf(somaTemperaturas / tamanho));
+            view.getHumidityLabel().setText(String.valueOf(somaUmidades / tamanho));
+            view.getPressureLabel().setText(String.valueOf(somaPressoes / tamanho));
+        } else {
+            view.getTempLabel().setText("0");
+            view.getHumidityLabel().setText("0");
+            view.getPressureLabel().setText("0");
+        }
+
+        view.getNumOfRegistersLabel().setText(String.valueOf(tamanho));
+    }
+    
+    private void inicializaDados(int dados){
+        System.out.println(dados);
+        if (dados == 0) {
             view.getTempLabel().setText("0");
             view.getHumidityLabel().setText("0");
             view.getPressureLabel().setText("0");
             view.getNumOfRegistersLabel().setText("0");
         }
-        float somaTemperaturas = 0;
-        float somaUmidades = 0;
-        float somaPressoes = 0;
-
-        for (int i = 0; i < tamanho; i++) {
-            somaTemperaturas += dados.get(i).getTemperatura();
-            somaUmidades += dados.get(i).getUmidade();
-            somaPressoes += dados.get(i).getPressao();
-        }
-
-        view.getTempLabel().setText(String.valueOf(somaTemperaturas / tamanho));
-        view.getHumidityLabel().setText(String.valueOf(somaUmidades / tamanho));
-        view.getPressureLabel().setText(String.valueOf(somaPressoes / tamanho));
-        view.getNumOfRegistersLabel().setText(String.valueOf(tamanho));
     }
 }
