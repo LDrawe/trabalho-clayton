@@ -2,7 +2,9 @@
 # Trabalho de Dados Climáticos
 ### Exercício avaliativo - Projetos de Sistemas de Software
 > Atividade para complemento de nota e aprendizado usando padrões de projeto - 2024
+>
 > Professor orientador: Clayton Vieira Fraga
+>
 > Dupla: Talles Henrique & Eduardo Portilho
 
 Este projeto é um aplicativo para gerenciamento de dados climáticos, desenvolvido em Java usando o padrão de arquitetura MVP (Model-View-Presenter). O sistema permite a inserção, visualização e remoção de dados de temperatura, umidade, pressão e data, além de oferecer funcionalidades de log em formatos JSON e XML.
@@ -37,6 +39,10 @@ O projeto está organizado da seguinte maneira:
 ## Protótipo Inicial
 
 ![image](https://github.com/user-attachments/assets/8fa8e1b2-3a47-4829-87d1-3587e8d28459)
+
+## Entrega Final
+
+![image](https://github.com/user-attachments/assets/b84aef75-5ba0-45fc-95ca-8049a8655128)
 
 ## Como Executar
 
@@ -81,4 +87,4 @@ Este projeto é licenciado sob a [MIT License](LICENSE).
 
 ## Contato
 
-Para mais informações, entre em contato com o desenvolvedor: [talles0h@gmail.com](mailto:talles0h@gmail.com) [eduardo.portilho@edu.ufes.br](mailto:eduardo.portilho@edu.ufes.br)
+Para mais informações, entre em contato com os desenvolvedores: [talles0h@gmail.com](mailto:talles0h@gmail.com) [eduardo.portilho@edu.ufes.br](mailto:eduardo.portilho@edu.ufes.br)
